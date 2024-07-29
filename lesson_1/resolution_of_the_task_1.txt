@@ -1,0 +1,8 @@
+1. 
+select * from skill_cities;
+select * from skill_managers;
+select * from sellers;
+2.
+select top 5 from skill_cities;
+select top 5 from skill_managers;
+select top 5 from sellers;
