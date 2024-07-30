@@ -3,10 +3,15 @@ select * from skill_cities;
 select * from skill_managers;
 select * from sellers;
 2.
-select top 5 from skill_cities;
-select top 5 from skill_managers;
-select top 5 from sellers;
+select top 5 * from skill_cities;
+select top 5 * from skill_managers;
+select top 5 * from sellers;
 3.
 select * from skill_cities limit 5;
 select * from skill_managers limit 5;
 select * from sellers limit 5;
+4.
+select * from(
+select table_name from information_schema.tables
+where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters'));
+    
