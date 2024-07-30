@@ -6,3 +6,7 @@ select * from sellers;
 select top 5 from skill_cities;
 select top 5 from skill_managers;
 select top 5 from sellers;
+3.
+select * from skill_cities limit 5;
+select * from skill_managers limit 5;
+select * from sellers limit 5;
