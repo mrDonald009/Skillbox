@@ -11,7 +11,6 @@ select * from skill_cities limit 5;
 select * from skill_managers limit 5;
 select * from sellers limit 5;
 4.
-select * from(
 select table_name from information_schema.tables
-where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters'));
-    
+where table_name in ('dispatchers', 'skill_continents', 'suppliers', 'sellers', 'exporters')
+   
