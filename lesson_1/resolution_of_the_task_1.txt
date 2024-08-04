@@ -13,4 +13,7 @@ select * from sellers limit 5;
 4.
 select table_name from information_schema.tables
 where table_name in ('dispatchers', 'skill_continents', 'suppliers', 'sellers', 'exporters')
-   
+select * from sellers
+
+select top 4 * from sellers
+
