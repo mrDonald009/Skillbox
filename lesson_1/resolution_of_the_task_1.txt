@@ -17,3 +17,4 @@ select * from sellers
 
 select top 4 * from sellers
 
+select concat('The number of rows in the table "Sellers" - ', count(*)) as result from sellers
