@@ -24,3 +24,5 @@ where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exp
 
 select column_name from information_schema.columns
 where table_name = 'sellers'
+
+select count (*) as cnt_str from sellers
