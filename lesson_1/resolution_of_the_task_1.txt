@@ -18,3 +18,6 @@ select * from sellers
 select top 4 * from sellers
 
 select concat('The number of rows in the table "Sellers" - ', count(*)) as result from sellers
+5.
+select table_name from information_schema.tables
+where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters')
