@@ -18,3 +18,10 @@ select
   (1+2+3+4+5+6+7+8+9) as sum_1_9_v1,
   (1+9)*4+5 as sum_1_9_v2;
 3.
+select 
+  first_name
+ ,surname
+ ,salary_rub
+ ,work_experience_months
+ ,salary_rub * work_experience_months as salary_all
+from users;
