@@ -56,3 +56,10 @@ select
     ,bonus_rub * bonus_cnt as bonus_all
     ,((salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months) + (bonus_rub * bonus_cnt) as salary_total
 from users;
+7.
+select * from investors;
+select
+	*
+	,annual_rate / 100 * invested_sum as annual_payment
+	,invested_sum * power((1 + (annual_rate / 100) / 12), total_years * 12) as final_amount
+from investors;
