@@ -1,42 +1,50 @@
 1.
 select * from users;
+
 select 
-    first_name
-   ,surname 
-   ,gender 
-   ,age
+	first_name
+	,surname 
+	,gender 
+	,age
 from users;
+
 select top 5
-    first_name
-   ,surname
-   ,gender 
-   ,age
+	 first_name
+	,surname
+	,gender 
+	,age
 from users;
+
 2.
-select (100+99)/2 + (95-5)/3 as result;
+	select (100+99)/2 + (95-5)/3 as result;
+
 select 
-    (1+2+3+4+5+6+7+8+9) as sum_1_9_v1
-   ,(1+9)*4+5 as sum_1_9_v2;
+	(1+2+3+4+5+6+7+8+9) as sum_1_9_v1
+	,(1+9)*4+5 as sum_1_9_v2;
+
 3.
 select 
-    first_name
-   ,surname
-   ,salary_rub
-   ,work_experience_months
-   ,salary_rub * work_experience_months as salary_all
+	 first_name
+	,surname
+	,salary_rub
+	,work_experience_months
+	,salary_rub * work_experience_months as salary_all
 from users;
+
 4.
 select
-    first_name + ' ' + surname as full_name
-   ,salary_rub
-   ,work_experience_months
-   ,salary_rub - (salary_rub * (tax_percent/100)) as salary_white
-   ,(salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months as salary_all
+	first_name + ' ' + surname as full_name
+	,salary_rub
+	,work_experience_months
+	,salary_rub - (salary_rub * (tax_percent/100)) as salary_white
+	,(salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months as salary_all
 from users;
+
 5.
 select * from users;
+
 select
-	user_id
+	 user_id
 	,first_name + ' ' + surname as full_name
 	,gender
 	,age
@@ -45,21 +53,25 @@ select
 	,bonus_cnt
 	,bonus_rub * bonus_cnt as bonus_all
 from users;
+
 6.
 select * from users;
+
 select
 	first_name + ' ' + surname as full_name
-    ,salary_rub
-    ,work_experience_months
-    ,salary_rub - (salary_rub * (tax_percent/100)) as salary_white
-    ,(salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months as salary_all
-    ,bonus_rub * bonus_cnt as bonus_all
-    ,((salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months) + (bonus_rub * bonus_cnt) as salary_total
+	,salary_rub
+	,work_experience_months
+	,salary_rub - (salary_rub * (tax_percent/100)) as salary_white
+	,(salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months as salary_all
+	,bonus_rub * bonus_cnt as bonus_all
+	,((salary_rub - (salary_rub * (tax_percent/100))) * work_experience_months) + (bonus_rub * bonus_cnt) as salary_total
 from users;
+
 7.
 select * from investors;
+
 select
-	*
+	 *
 	,annual_rate / 100 * invested_sum as annual_payment
 	,invested_sum * power((1 + (annual_rate / 100) / 12), total_years * 12) as final_amount
 from investors;

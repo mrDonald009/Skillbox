@@ -1,28 +1,43 @@
 1. 
 select * from skill_cities;
+
 select * from skill_managers;
+
 select * from sellers;
+
 2.
 select top 5 * from skill_cities;
+
 select top 5 * from skill_managers;
+
 select top 5 * from sellers;
+
 3.
 select * from skill_cities limit 5;
+
 select * from skill_managers limit 5;
+
 select * from sellers limit 5;
+
 4.
-select table_name from information_schema.tables
-where table_name in ('dispatchers', 'skill_continents', 'suppliers', 'sellers', 'exporters')
-select * from sellers
+select 
+	table_name 
+from information_schema.tables
+where table_name in ('dispatchers', 'skill_continents', 'suppliers', 'sellers', 'exporters');
 
-select top 4 * from sellers
+select top 4 * from sellers;
 
-select concat('The number of rows in the table "Sellers" - ', count(*)) as result from sellers
+select concat('The number of rows in the table "Sellers" - ', count(*)) as result from sellers;
+
 5.
-select table_name from information_schema.tables
-where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters')
+select 
+	table_name 
+from information_schema.tables
+where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters');
 
-select column_name from information_schema.columns
-where table_name = 'sellers'
+select 
+	column_name 
+from information_schema.columns
+where table_name = 'sellers';
 
-select count (*) as cnt_str from sellers
+select count (*) as cnt_str from sellers;
