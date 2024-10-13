@@ -1,0 +1,19 @@
+1.
+select * 
+from skill_managers
+where age = 47;
+
+select *
+from skill_price
+where cnt = 15;
+
+select *
+from skill_continents
+where continent_name = 'Europe';
+
+select *
+from skill_countries
+where continent_id in (
+  select continent_id
+  from skill_continents
+  where continent_name = 'Europe');
