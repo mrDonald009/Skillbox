@@ -17,3 +17,25 @@ where continent_id in (
   select continent_id
   from skill_continents
   where continent_name = 'Europe');
+
+2.
+select
+	item_name
+from skill_price
+where price_rub = 100;
+
+select *
+from skill_managers
+where age = 41;
+
+select *
+from skill_managers
+where gender = 'F';
+
+select *
+from skill_cities
+where city_name = 'Vitebsk';
+
+select *
+from skill_cities
+where is_capital = 1;
