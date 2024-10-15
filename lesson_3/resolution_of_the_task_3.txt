@@ -39,3 +39,11 @@ where city_name = 'Vitebsk';
 select *
 from skill_cities
 where is_capital = 1;
+
+3.
+select
+	item_name
+from skill_price
+where price_rub between 10 and 100;
+
+
