@@ -46,4 +46,9 @@ select
 from skill_price
 where price_rub between 10 and 100;
 
+select *
+from skill_managers
+where gender = 'F'
+and age > 38;
+
 
