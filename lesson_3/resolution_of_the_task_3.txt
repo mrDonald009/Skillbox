@@ -51,4 +51,8 @@ from skill_managers
 where gender = 'F'
 and age > 38;
 
-
+select *
+from skill_managers
+where gender = 'M'
+and age >= 27 
+and age <= 49;
