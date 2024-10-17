@@ -44,19 +44,31 @@ where is_capital = 1;
 select
 	item_name
 from skill_price
-where price_rub between 10 and 100;
+where (1=1)
+	and price_rub between 10 and 100;
 
 select *
 from skill_managers
-where gender = 'F'
-and age > 38;
+where (1=1)
+	and gender = 'F'
+	and age > 38;
 
 select *
 from skill_managers
-where gender = 'M'
-and age >= 27 
-and age <= 49;
+where (1=1)
+	and gender = 'M'
+    	and age >= 27 
+	and age <= 49;
 
 select *
 from skill_managers
-where gender = 'F' or (gender = 'M' and age <= 25);
+where (1=1)
+	and gender = 'F' 
+	or (gender = 'M' and age <= 25);
+
+select *
+from skill_cities
+where (1=1)
+	and is_capital = 1 
+	and population >= 10000000;
+
