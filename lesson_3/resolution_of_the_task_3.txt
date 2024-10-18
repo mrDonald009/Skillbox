@@ -81,3 +81,37 @@ where (1=1)
 	and is_capital = 1 
 	and population >= 10000000;
 
+4.
+select *
+from skill_managers
+where (1=1)
+	and age in ('21','24','27','31','33','35','37','41','43','45','51','55');
+
+select * 
+from skill_managers
+where (1=1)
+	and first_name in ('Max', 'Piter', 'Ellis', 'Kira', 'Luna')
+	and age between 23 and 42;
+
+select * 
+from skill_managers
+where (1=1)
+	and gender = 'M'
+	and (last_name like '%er' 
+  	      or
+             last_name like '%nen');
+
+select * 
+from skill_cities
+where (1=1)
+	and city_name like '%jin%';
+
+select *
+from skill_managers
+where (1=1)
+	and last_name like '%a%'
+	and last_name like '%o%'
+	and last_name like '%c%';
+
+
+
