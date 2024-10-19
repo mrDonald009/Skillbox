@@ -1,0 +1,20 @@
+1.
+select *
+from skill_countries
+order by population;
+
+select *
+from skill_countries
+order by population desc;
+
+select *
+from skill_countries
+order by continent_id, population desc;
+
+select *
+from skill_cities
+order by country_id, population desc;
+
+select *
+from skill_cities
+order by country_id, is_capital desc, population desc;
