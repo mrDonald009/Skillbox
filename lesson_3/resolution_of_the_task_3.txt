@@ -115,7 +115,7 @@ where (1=1)
 
 5.
 select *
-from skill_manager
+from skill_managers
 where (1=1)
 	and age not in  ('21', '24', '27', '25')
 	and age < 30
@@ -123,4 +123,16 @@ where (1=1)
 	and last_name not like '%son'
 	and last_name not like '%nen'
 	and last_name not like 'Mac%';
+
+select *
+from skill_managers
+where (1=1)
+	and age not in  ('21', '24', '27', '25')
+	and age < 30
+	and first_name not in ('Max')
+	and last_name not like '%son'
+	and last_name not like '%nen'
+	and last_name not like 'Mac%'
+	and gender = 'M'
+	or (gender = 'F' and age in ('25', '27'));
 
