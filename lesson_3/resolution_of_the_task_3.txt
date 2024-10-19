@@ -113,5 +113,14 @@ where (1=1)
 	and last_name like '%o%'
 	and last_name like '%c%';
 
-
+5.
+select *
+from skill_manager
+where (1=1)
+	and age not in  ('21', '24', '27', '25')
+	and age < 30
+	and first_name not in ('Max')
+	and last_name not like '%son'
+	and last_name not like '%nen'
+	and last_name not like 'Mac%';
 
