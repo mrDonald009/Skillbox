@@ -18,3 +18,31 @@ order by country_id, population desc;
 select *
 from skill_cities
 order by country_id, is_capital desc, population desc;
+
+2.
+select *
+from skill_cities
+order by population desc;
+
+select *
+from skill_cities
+order by population;
+
+select top 1 *
+from skill_cities
+where (1=1)
+	and country_id = 10
+order by country_id, population;
+
+select top 1 *
+from skill_cities
+where (1=1)
+	and country_id = 4
+order by country_id, population desc;
+
+select *
+from skill_cities
+where (1=1)
+	and is_capital = 1
+order by population desc;
+
