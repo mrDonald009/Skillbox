@@ -46,3 +46,29 @@ where (1=1)
 	and is_capital = 1
 order by population desc;
 
+3.
+select
+	first_name
+	,length(first_name) as len_first_name
+	,trim(first_name) as trim_first_name
+	,length(trim(first_name)) as len_trim_first_name
+from skill_customers;
+
+select
+	*
+from skill_customers
+where (1=1)
+	and length(first_name) - length(trim(first_name)) = 0;
+
+select
+	*
+from skill_customers
+where (1=1)
+	and length(first_name) like length(trim(first_name));
+
+select
+	ltrim(rtrim(first_name)) as first_name
+       ,ltrim(rtrim(last_name)) as last_name
+from skill_customers;
+
+
