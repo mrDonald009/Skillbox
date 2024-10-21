@@ -48,7 +48,7 @@ order by population desc;
 
 3.
 select
-	first_name
+	 first_name
 	,length(first_name) as len_first_name
 	,trim(first_name) as trim_first_name
 	,length(trim(first_name)) as len_trim_first_name
@@ -70,5 +70,12 @@ select
 	ltrim(rtrim(first_name)) as first_name
        ,ltrim(rtrim(last_name)) as last_name
 from skill_customers;
+
+4.
+select
+	 concat(upper(substring(item_name,1,1)), substring(item_name,2, len(item_name) - 1)) as item_name
+	,price_rub
+	,cnt
+from skill_price;
 
 
