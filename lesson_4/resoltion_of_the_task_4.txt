@@ -78,11 +78,13 @@ select
 	,cnt
 from skill_price;
 
-select
-	 *
-     	,substring(ltrim(str_columns), 1, 1) as id
-  
-     	--,str_columns like ',%' as first_name
+select 
+	 str_columns
+	,trim(substring(str_columns, 1, 3)) as id
+	,trim(substring(str_columns, 5, 8)) as first_name
+	,trim(substring(str_columns, 14, 13)) as last_name
+	,trim(substring(str_columns, 28, 8)) as age
+	,trim(substring(str_columns, 37, 1)) as gender
 from skill_fix;
 
 
