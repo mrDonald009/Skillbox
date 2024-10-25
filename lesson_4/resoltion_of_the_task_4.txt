@@ -85,7 +85,7 @@ select
 	,trim(substring(str_columns, 14, 13)) as last_name
 	,trim(substring(str_columns, 28, 8)) as age
 	,trim(substring(str_columns, 37, 1)) as gender
-from skill_fix;
+from skill_fix where not trim(substring(str_columns, 28, 8)) like '% %';
 
 
 
