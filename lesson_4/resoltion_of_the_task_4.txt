@@ -108,3 +108,9 @@ select
 from skill_customers
 where (1=1)
 	and charindex('[wrong]', last_name) > 0;
+
+select 
+	last_name
+from skill_customers
+  where (1=1)
+	and locate('[wrong]', last_name) > 0;
