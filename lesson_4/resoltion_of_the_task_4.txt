@@ -102,3 +102,9 @@ select
 from skill_customers
 where (1=1)
 	and last_name like '%[wrong]%' escape '[';
+
+select
+	last_name
+from skill_customers
+where (1=1)
+	and charindex('[wrong]', last_name) > 0;
