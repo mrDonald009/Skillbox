@@ -123,3 +123,14 @@ select
 from skill_customers
 where (1=1)
 	and strpos(last_name, '[wrong]') > 0;
+----
+MS SQL:
+select
+	 customer_id
+	,first_name
+	,concat(substring(trim(last_name),0,charindex('[w', trim(last_name))), substring(trim(last_name), charindex('[w', trim(last_name)) + 7, len(trim(last_name)) -  charindex('[w', trim(last_name)) + 7)) as last_name
+	,age
+	,gender
+from skill_customers
+where (1=1)
+	and charindex('[wrong]', last_name) > 0;
