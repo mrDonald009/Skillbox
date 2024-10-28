@@ -114,7 +114,7 @@ MySQL:
 select 
 	last_name
 from skill_customers
-  where (1=1)
+where (1=1)
 	and locate('[wrong]', last_name) > 0;
 
 PostgreSQL:
@@ -134,3 +134,13 @@ select
 from skill_customers
 where (1=1)
 	and charindex('[wrong]', last_name) > 0;
+
+MySQL:
+select
+	 customer_id
+	,first_name,concat(substring(trim(last_name), 1, locate('[w', trim(last_name)) - 1), substring(trim(last_name), locate('[w', trim(last_name)) + 7, length(trim(last_name)) - locate('[w', trim(last_name)) + 7)) as last_name
+	,age
+	,gender
+from skill_customers
+where (1=1)
+	and locate('[wrong]', last_name) > 0;
