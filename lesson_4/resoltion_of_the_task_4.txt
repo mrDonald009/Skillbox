@@ -202,3 +202,15 @@ where (1=1)
 	and trim(last_name) like '%[wrong]%'
 	and charindex('[wrong]', last_name) > 0;
 
+MySQL:
+select
+	 customer_id
+	,first_name
+    ,replace(trim(last_name), '[wrong]', '') as last_name
+    ,age
+	,gender
+from skill_customers
+where (1=1)
+    and trim(last_name) like '%[wrong]%'
+	and locate('[wrong]', last_name) > 0;
+
