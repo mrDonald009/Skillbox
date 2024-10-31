@@ -181,7 +181,7 @@ where (1=1)
 
 ver.0.02
 select
-	customer_id
+	 customer_id
 	,first_name	
 	,concat(left(trim(last_name), strpos(trim(last_name), '[w') - 1), right(trim(last_name), length(trim(last_name)) - strpos(trim(last_name), 'g]') - 1)) as last_name
 	,age	
@@ -189,3 +189,16 @@ select
 from skill_customers
 where (1=1)
 	and strpos(last_name, '[wrong]') > 0;
+----
+MS SQL:
+select
+	 customer_id
+	,first_name
+	,replace(trim(last_name), '[wrong]', '') as last_name
+	,age
+	,gender
+from skill_customers
+where (1=1)
+	and trim(last_name) like '%[wrong]%'
+	and charindex('[wrong]', last_name) > 0;
+
