@@ -1,0 +1,10 @@
+1.
+1.
+	a. select cast(CURRENT_TIMESTAMP as time);
+	b. select cast(getdate() as time);
+2.
+	a. select cast(CURRENT_TIMESTAMP as time);
+	b. select cast(now() as time);
+3.
+	a. select cast(CURRENT_TIMESTAMP as time);
+	b. select cast(now() as time);
