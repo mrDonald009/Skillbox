@@ -36,4 +36,8 @@
 	b. select cast(current_timestamp as time);
 	c. select current_timestamp::date;
 	d. select current_timestamp::time;
-	e.
+	e. select
+	   	last_transaction_dt
+	    	,cast(last_transaction_dt as date) as last_transaction_date
+	    	,last_transaction_dt::time as last_transaction_time
+	   from skill_managers;
