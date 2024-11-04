@@ -1,4 +1,4 @@
-1.
+1. Решение
 1.
 	a. select cast(CURRENT_TIMESTAMP as time);
 	b. select cast(getdate() as time);
@@ -9,7 +9,7 @@
 	a. select cast(CURRENT_TIMESTAMP as time);
 	b. select cast(now() as time);
 
-2.
+2. Решение
 1.	
 	a. select cast(current_timestamp as date);
 	b. select cast(current_timestamp as time);
@@ -41,3 +41,17 @@
 	    	,cast(last_transaction_dt as date) as last_transaction_date
 	    	,last_transaction_dt::time as last_transaction_time
 	   from skill_managers;
+
+3. Решение
+1.
+	a. select format(current_timestamp, 'yyyy-dd-mm');
+	b.
+	c.
+2.
+	a.
+	b.
+	c.
+3.
+	a.
+	b.
+	c.
