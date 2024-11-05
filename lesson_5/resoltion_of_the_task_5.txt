@@ -44,9 +44,9 @@
 
 3. Решение
 1.
-	a. select format(current_timestamp, 'yyyy-dd-mm');
-	b.
-	c.
+	a. select format(current_timestamp, 'yyyy-dd-MM');
+	b. select format(current_timestamp, 'hh:mm:ss');
+	c. 
 2.
 	a.
 	b.
