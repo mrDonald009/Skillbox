@@ -46,7 +46,11 @@
 1.
 	a. select format(current_timestamp, 'yyyy-dd-MM');
 	b. select format(current_timestamp, 'hh:mm:ss');
-	c. 
+	c. select
+		last_transaction_dt
+		,format(last_transaction_dt, 'YYYY-DD-MM')
+		,format(last_trasaction_dt, 'hh:mm:ss')
+	   from skill_mangers;
 2.
 	a.
 	b.
