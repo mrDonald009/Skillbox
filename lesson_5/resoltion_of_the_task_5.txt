@@ -47,14 +47,18 @@
 	a. select format(current_timestamp, 'yyyy-dd-MM');
 	b. select format(current_timestamp, 'hh:mm:ss');
 	c. select
-		last_transaction_dt
-		,format(last_transaction_dt, 'YYYY-DD-MM')
-		,format(last_trasaction_dt, 'hh:mm:ss')
-	   from skill_mangers;
+	   	last_transaction_dt
+	   	,format(last_transaction_dt, 'yyyy-dd-MM')
+	   	,format(last_transaction_dt, 'hh:mm:ss')
+	   from skill_managers;
 2.
-	a.
-	b.
-	c.
+	a. select date_format(current_timestamp, '%Y-%d-%m');
+	b. select date_format(current_timestamp, '%H:%i:%s');
+	c. select
+		last_transaction_dt
+		,date_format(last_transaction_dt, '%Y-%d-%m')
+		,date_format(last_transaction_dt, '%H:%i:%s')
+	   from skill_managers;
 3.
 	a.
 	b.
