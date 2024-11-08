@@ -60,6 +60,10 @@
 		,date_format(last_transaction_dt, '%H:%i:%s')
 	   from skill_managers;
 3.
-	a.
-	b.
-	c.
+	a. select to_char(current_timestamp, 'yyyy-dd-MM');
+	b. select to_char(current_timestamp, 'hh:MI:ss');
+	c. select
+	  	last_transaction_dt
+  		,to_char(last_transaction_dt, 'yyyy-dd-MM')
+  		,to_char(last_transaction_dt, 'hh:MI:ss')
+	   from skill_managers;
