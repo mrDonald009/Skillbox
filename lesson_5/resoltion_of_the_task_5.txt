@@ -82,11 +82,11 @@
 	d. select extract(hour from current_timestamp);
 	e. select extract(minute from current_timestamp);
 3.
-	a.
-	b.
-	c.
-	d.
-	e.
+	a. select date_part('year', current_timestamp);
+	b. select date_part('month', current_timestamp);
+	c. select date_part('day', current_timestamp);
+	d. select extract('hour' from current_timestamp);
+	e. select extract('minute' from current_timestamp);
 	
 
 
