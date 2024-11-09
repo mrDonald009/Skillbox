@@ -90,13 +90,22 @@
 
 5. Решение
 1.
-	a. select  
-		   first_name
-	          ,last_name
-		  ,year(birth_date) as year_of_born
-	   from skill_managers
-	   where (1=1)
-	   	   and datepart(hh, last_transaction_dt) >= 22;
+	a.  	select
+			first_name
+			,last_name
+			,year(birth_date) as year_of_born
+		from skill_managers
+		where (1=1)
+			and datepart(hh, last_transaction_dt) >= 22;
+	b.  	select
+			first_name
+			,last_name
+			,last_transaction_dt
+			,concat(datepart(d, last_transaction_dt), ' ', datename(month, last_transaction_dt)) as dt
+		from skill_managers
+		where (1=1)
+			and month(birth_date) between 6 and 8
+		order by last_name;
 
 
 
