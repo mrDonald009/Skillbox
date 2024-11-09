@@ -106,7 +106,23 @@
 		where (1=1)
 			and month(birth_date) between 6 and 8
 		order by last_name;
-
+2.
+	a.	select
+			first_name
+			,last_name
+			,year(birth_date) as year_of_born
+		from skill_managers
+		where (1=1)
+			and extract(hour from last_transaction_dt) >= 22;
+	b.	select
+			first_name
+			,last_name
+			,last_transaction_dt
+			,concat(day(last_transaction_dt), ' ', date_format(last_transaction_dt, '%M'))  as dt
+		from skill_managers
+		where (1=1)
+			and month(birth_date) between 6 and 8
+		order by last_name;
 
 
 
