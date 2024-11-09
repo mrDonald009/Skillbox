@@ -67,3 +67,31 @@
   		,to_char(last_transaction_dt, 'yyyy-dd-MM')
   		,to_char(last_transaction_dt, 'hh:MI:ss')
 	   from skill_managers;
+
+4.Решение
+1.
+	a. select year(current_timestamp);
+	b. select month(current_timestamp);
+	c. select day(current_timestamp);
+	d. select datepart(hh, current_timestamp);
+	e. select datepart(mi, current_timestamp);
+2.
+	a. 
+	b. 
+	c. 
+	d.
+	e. 
+3.
+	a.
+	b.
+	c.
+	d.
+	e.
+	
+
+
+
+
+
+
+	
