@@ -31,10 +31,10 @@
      	c. Напишите запрос, выделяющий с помощью функции CONVERT дату из результата выполнения функции CURRENT_TIMESTAMP.
      	d. Напишите запрос, выделяющий с помощью функции CONVERT время из результата выполнения функции CURRENT_TIMESTAMP.
      	e. Напишите запрос к таблице skill_managers, получающий следующие колонки:
-Номер колонки	Название колонки	Значение
-1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
-2		last_transaction_date	дата, выделенная из поля last_transaction_dt с помощью функции CAST
-3		last_transaction_time	время, выделенное из поля last_transaction_dt с помощью функции CONVERT
+	Номер колонки	Название колонки	Значение
+	1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
+	2		last_transaction_date	дата, выделенная из поля last_transaction_dt с помощью функции CAST
+	3		last_transaction_time	время, выделенное из поля last_transaction_dt с помощью функции CONVERT
 
 2.	База данных MySQL - https://dbfiddle.uk/GjIkApe1?hide=1: 
      	a. Напишите запрос, выделяющий с помощью функции CAST дату из результата выполнения функции CURRENT_TIMESTAMP.
@@ -42,11 +42,10 @@
      	c. Напишите запрос, выделяющий с помощью функции CONVERT дату из результата выполнения функции CURRENT_TIMESTAMP.
      	d. Напишите запрос, выделяющий с помощью функции CONVERT время из результата выполнения функции CURRENT_TIMESTAMP.
      	e. Напишите запрос к таблице skill_managers, получающий следующие колонки:
-
-Номер колонки	Название колонки	Значение
-1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
-2		last_transaction_date	дата, выделенная из поля last_transaction_dt с помощью функции CAST
-3		last_transaction_time	время, выделенное из поля last_transaction_dt с помощью функции CONVERT
+	Номер колонки	Название колонки	Значение
+	1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
+	2		last_transaction_date	дата, выделенная из поля last_transaction_dt с помощью функции CAST
+	3		last_transaction_time	время, выделенное из поля last_transaction_dt с помощью функции CONVERT
 
 3.	База данных Postgres - https://dbfiddle.uk/IbJkCdxz?hide=1: 
 	a. Напишите запрос, выделяющий с помощью функции CAST дату из результата выполнения функции CURRENT_TIMESTAMP.
@@ -54,10 +53,10 @@
 	c. Напишите запрос, выделяющий с помощью операции преобразования типов :: дату из результата выполнения функции CURRENT_TIMESTAMP.
 	d. Напишите запрос, выделяющий с помощью операции преобразования типов :: время из результата выполнения функции CURRENT_TIMESTAMP.
 	e. Напишите запрос к таблице skill_managers, получающий следующие колонки:
-Номер колонки	Название колонки	Значение
-1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
-2		last_transaction_date	дата, выделенная из поля last_transaction_dt с помощью функции CAST
-3		last_transaction_time	время, выделенное из поля last_transaction_dt с помощью операции преобразования типов ::
+	Номер колонки	Название колонки	Значение
+	1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
+	2		last_transaction_date	дата, выделенная из поля last_transaction_dt с помощью функции CAST
+	3		last_transaction_time	время, выделенное из поля last_transaction_dt с помощью операции преобразования типов ::
 
 
 Задание 3
@@ -66,28 +65,29 @@
 	a.	Напишите запрос с использованием функции FORMAT, преобразующий результат выполнения функции CURRENT_TIMESTAMP в строку, содержащую дату по формату YYYY-DD-MM. Пример внешнего вида даты: 2005-08-09.
 	b.	Напишите запрос с использованием функции FORMAT, преобразующий результат выполнения функции CURRENT_TIMESTAMP в строку, содержащую время по формату hh:mm:ss. Пример внешнего вида времени: 18:31:42.
 	c.	Напишите запрос к таблице skill_managers, получающий следующие колонки:
-Номер колонки	Название колонки	Значение
-1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
-2		last_transaction_date	значение поля last_transaction_dt, отформатированное функцией FORMAT к виду YYYY-DD-MM
-3		last_transaction_time	значение поля last_transaction_dt, отформатированное функцией FORMAT к виду hh:mm:ss
+	Номер колонки	Название колонки	Значение
+	1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
+	2		last_transaction_date	значение поля last_transaction_dt, отформатированное функцией FORMAT к виду YYYY-DD-MM
+	3		last_transaction_time	значение поля last_transaction_dt, отформатированное функцией FORMAT к виду hh:mm:ss
 
 2.	База данных MySQL - https://dbfiddle.uk/GjIkApe1?hide=1: 
 	a.	Напишите запрос с использованием функции DATE_FORMAT, преобразующий результат выполнения функции CURRENT_TIMESTAMP в строку, содержащую дату по формату YYYY-DD-MM. Пример внешнего вида даты: 2005-08-09.
 	b.	Напишите запрос с использованием функции DATE_FORMAT, преобразующий результат выполнения функции CURRENT_TIMESTAMP в строку, содержащую время по формату hh:mm:ss. Пример внешнего вида времени: 18:31:42.
 	c.	Напишите запрос к таблице skill_managers, получающий следующие колонки:
-Номер колонки	Название колонки	Значение
-1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
-2		last_transaction_date	значение поля last_transaction_dt, отформатированное функцией DATE_FORMAT к виду YYYY-DD-MM
-3		last_transaction_time	значение поля last_transaction_dt, отформатированное функцией DATE_FORMAT к виду hh:mm:ss
+	Номер колонки	Название колонки	Значение
+	1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
+	2		last_transaction_date	значение поля last_transaction_dt, отформатированное функцией DATE_FORMAT к виду YYYY-DD-MM
+	3		last_transaction_time	значение поля last_transaction_dt, отформатированное функцией DATE_FORMAT к виду hh:mm:ss
 
 3.	База данных Postgres - https://dbfiddle.uk/IbJkCdxz?hide=1: 
 	a.	Напишите запрос с использованием функции TO_CHAR, преобразующий результат выполнения функции CURRENT_TIMESTAMP в строку, содержащую дату по формату YYYY-DD-MM. Пример внешнего вида даты: 2005-08-09.
 	b.	Напишите запрос с использованием функции TO_CHAR, преобразующий результат выполнения функции CURRENT_TIMESTAMP в строку, содержащую время по формату hh:mm:ss. Пример внешнего вида времени: 18:31:42.
 	c.	Напишите запрос к таблице skill_managers, получающий следующие колонки:
-Номер колонки	Название колонки	Значение
-1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
-2		last_transaction_date	значение поля last_transaction_dt, преобразованное функцией TO_CHAR к строке по формату: YYYY-DD-MM
-3		last_transaction_time	значение поля last_transaction_dt, преобразованное функцией TO_CHAR к строке по формату: hh:mm:ss
+	Номер колонки	Название колонки	Значение
+	1		last_transaction_dt	значение last_transaction_dt как оно есть в таблице
+	2		last_transaction_date	значение поля last_transaction_dt, преобразованное функцией TO_CHAR к строке по формату: YYYY-DD-MM
+	3		last_transaction_time	значение поля last_transaction_dt, преобразованное функцией TO_CHAR к строке по формату: hh:mm:ss
+
 Задание 4
 Для каждой базы данных выполните задания в пунктах a, b, c, d и e:
 1.	База данных MS SQL - https://dbfiddle.uk/_8JG5S2_?hide=1: 
@@ -114,20 +114,20 @@
 
 Задание 5
 Для каждой базы данных напишите запросы к таблице skill_managers, выполняющие следующие действия:
-a.	Получение списка менеджеров, состоящего из следующих колонок:
+	a.	Получение списка менеджеров, состоящего из следующих колонок:
 	●	Имя менеджера.
 	●	Фамилия менеджера.
 	●	Год рождения менеджера (назовите колонку year_of_born).
 
 		В выборку включите менеджеров, которые имели последнюю транзакцию в 22 часа или позднее.
 
-b.	Получение списка менеджеров, состоящего из следующих колонок:
+	b.	Получение списка менеджеров, состоящего из следующих колонок:
 	●	Имя менеджера.
 	●	Фамилия менеджера.
 	●	Дату последней транзакции в виде: день по формату 1-31 (без первого нуля) и через пробел английское название месяца, колонку назовите dt.
 		В выборку включите менеджеров, которые родились летом, и отсортируйте весь список по фамилии (по возрастанию).
 
-Для написания запросов используйте следующие среды:
+	Для написания запросов используйте следующие среды:
 	●	База данных MS SQL - https://dbfiddle.uk/_8JG5S2_?hide=1
 	●	База данных MySQL - https://dbfiddle.uk/GjIkApe1?hide=1
 	●	База данных Postgres - https://dbfiddle.uk/IbJkCdxz?hide=1
