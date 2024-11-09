@@ -76,11 +76,11 @@
 	d. select datepart(hh, current_timestamp);
 	e. select datepart(mi, current_timestamp);
 2.
-	a. 
-	b. 
-	c. 
-	d.
-	e. 
+	a. select year(current_timestamp);
+	b. select month(current_timestamp);
+	c. select day(current_timestamp);
+	d. select extract(hour from current_timestamp);
+	e. select extract(minute from current_timestamp);
 3.
 	a.
 	b.
