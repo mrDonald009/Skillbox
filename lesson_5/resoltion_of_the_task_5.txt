@@ -68,7 +68,7 @@
   		,to_char(last_transaction_dt, 'hh:MI:ss')
 	   from skill_managers;
 
-4.Решение
+4. Решение
 1.
 	a. select year(current_timestamp);
 	b. select month(current_timestamp);
@@ -87,7 +87,18 @@
 	c. select date_part('day', current_timestamp);
 	d. select extract('hour' from current_timestamp);
 	e. select extract('minute' from current_timestamp);
-	
+
+5. Решение
+1.
+	a. select  
+		   first_name
+	          ,last_name
+		  ,year(birth_date) as year_of_born
+	   from skill_managers
+	   where (1=1)
+	   	   and datepart(hh, last_transaction_dt) >= 22;
+
+
 
 
 
