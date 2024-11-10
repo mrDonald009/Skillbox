@@ -129,7 +129,7 @@
 
 		Для написания запросов используйте следующие среды:
 	●	База данных MS SQL - https://dbfiddle.uk/_8JG5S2_?hide=1
-	●	База данных MySQL - https://dbfiddle.uk/GjIkApe1?hide=1
+	●	База данных MySQL - https://dbfiddle.uk/GjIkApe1?hide=1	
 	●	База данных Postgres - https://dbfiddle.uk/IbJkCdxz?hide=1
 
 
