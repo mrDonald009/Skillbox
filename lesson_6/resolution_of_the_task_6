@@ -1,1 +1,6 @@
 1. Решение
+1.  select 
+        *
+    from skill_managers
+    where (1=1)
+        and birth_date = '1989-11-25';
