@@ -23,3 +23,9 @@
     from skill_managers
     where (1=1)
             and cast(last_transaction_dt as date) = '2020-09-01';
+5. 
+    select
+      *
+    from skill_managers
+    where (1=1)
+            and cast(last_transaction_dt as time) = '16:54:30';
