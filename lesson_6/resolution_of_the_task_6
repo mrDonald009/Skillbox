@@ -5,3 +5,9 @@
     from skill_managers
     where (1=1)
             and birth_date = '1989-11-25';
+2. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and (birth_date = '1989-11-25' or birth_date = '1997-07-14'); 
