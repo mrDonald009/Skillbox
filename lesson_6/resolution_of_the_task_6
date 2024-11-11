@@ -17,3 +17,10 @@
     from skill_managers
     where (1=1)
             and last_transaction_dt in ('2020-03-10 15:07:11', '2020-05-11 17:28:26');
+4.
+    select
+      *
+    from skill_managers
+    where (1=1)
+            and cast(last_transaction_dt as date) = '2020-03-10' 
+            and cast(last_transaction_dt as time) in ('15:07:11');
