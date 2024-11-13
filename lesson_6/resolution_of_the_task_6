@@ -43,3 +43,13 @@
     from skill_managers
     where (1=1)
             and birth_date BETWEEN '1989-11-25' and '1997-07-14';
+3. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and (
+                    cast(last_transaction_dt as date) in ('2020-03-10')
+                    and 
+                    cast(last_transaction_dt as time) = '15:07:11'
+                );            
