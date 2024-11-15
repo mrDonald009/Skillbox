@@ -72,9 +72,9 @@
     from skill_operation
     where (1=1)
             and (
-                  year >= year('2020-08-20')
-                  and 
-                  month >= month('2020-08-20')
-                  and
-                  day >= day('2020-08-20')
+                    year >= year('2020-08-20')
+                    and 
+                    month >= month('2020-08-20')
+                    and
+                    day >= day('2020-08-20')
                  );
