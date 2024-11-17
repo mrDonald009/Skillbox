@@ -27,9 +27,9 @@
 	c. select convert(current_timestamp, date);
 	d. select convert(current_timestamp, time);
 	e. select
-	   	last_transaction_dt
-	   	,cast(last_transaction_dt as date) as last_transaction_date
-	   	,convert(last_transaction_dt, time) as last_transaction_time
+	   		 last_transaction_dt
+	   		,cast(last_transaction_dt as date) as last_transaction_date
+	   		,convert(last_transaction_dt, time) as last_transaction_time
 	   from skill_managers;
 3.
 	a. select cast(current_timestamp as date);
@@ -37,7 +37,7 @@
 	c. select current_timestamp::date;
 	d. select current_timestamp::time;
 	e. select
-	   	last_transaction_dt
+	   		 last_transaction_dt
 	    	,cast(last_transaction_dt as date) as last_transaction_date
 	    	,last_transaction_dt::time as last_transaction_time
 	   from skill_managers;
@@ -47,25 +47,25 @@
 	a. select format(current_timestamp, 'yyyy-dd-MM');
 	b. select format(current_timestamp, 'hh:mm:ss');
 	c. select
-	   	last_transaction_dt
-	   	,format(last_transaction_dt, 'yyyy-dd-MM')
-	   	,format(last_transaction_dt, 'hh:mm:ss')
+	   		 last_transaction_dt
+	   		,format(last_transaction_dt, 'yyyy-dd-MM')
+	   		,format(last_transaction_dt, 'hh:mm:ss')
 	   from skill_managers;
 2.
 	a. select date_format(current_timestamp, '%Y-%d-%m');
 	b. select date_format(current_timestamp, '%H:%i:%s');
 	c. select
-		last_transaction_dt
-		,date_format(last_transaction_dt, '%Y-%d-%m')
-		,date_format(last_transaction_dt, '%H:%i:%s')
+			 last_transaction_dt
+			,date_format(last_transaction_dt, '%Y-%d-%m')
+			,date_format(last_transaction_dt, '%H:%i:%s')
 	   from skill_managers;
 3.
 	a. select to_char(current_timestamp, 'yyyy-dd-MM');
 	b. select to_char(current_timestamp, 'hh:MI:ss');
 	c. select
-	  	last_transaction_dt
-  		,to_char(last_transaction_dt, 'yyyy-dd-MM')
-  		,to_char(last_transaction_dt, 'hh:MI:ss')
+	  		 last_transaction_dt
+  			,to_char(last_transaction_dt, 'yyyy-dd-MM')
+  			,to_char(last_transaction_dt, 'hh:MI:ss')
 	   from skill_managers;
 
 4. Решение
@@ -90,58 +90,55 @@
 
 5. Решение
 1.
-	a.  	select
-			first_name
+	a.  select
+			 first_name
 			,last_name
 			,year(birth_date) as year_of_born
 		from skill_managers
 		where (1=1)
-			and datepart(hh, last_transaction_dt) >= 22;
-	b.  	select
-			first_name
+				and datepart(hh, last_transaction_dt) >= 22;
+	b.  select
+			 first_name
 			,last_name
 			,last_transaction_dt
 			,concat(datepart(d, last_transaction_dt), ' ', datename(month, last_transaction_dt)) as dt
 		from skill_managers
 		where (1=1)
-			and month(birth_date) between 6 and 8
+				and month(birth_date) between 6 and 8
 		order by last_name;
 2.
 	a.	select
-			first_name
+			 first_name
 			,last_name
 			,year(birth_date) as year_of_born
 		from skill_managers
 		where (1=1)
-			and extract(hour from last_transaction_dt) >= 22;
+				and extract(hour from last_transaction_dt) >= 22;
 	b.	select
-			first_name
+			 first_name
 			,last_name
 			,last_transaction_dt
 			,concat(day(last_transaction_dt), ' ', date_format(last_transaction_dt, '%M'))  as dt
 		from skill_managers
 		where (1=1)
-			and month(birth_date) between 6 and 8
+				and month(birth_date) between 6 and 8
 		order by last_name;
 3.
 	a.	select
-			first_name
+			 first_name
 			,last_name
 			,date_part('year', birth_date) as year_of_born
 		from skill_managers
 		where (1=1)
-			and extract('hour' from last_transaction_dt) >= 22;
+				and extract('hour' from last_transaction_dt) >= 22;
 
 	b.	select
-			first_name
+			 first_name
 			,last_name
 			,last_transaction_dt
 			,concat(date_part('day', last_transaction_dt), ' ', to_char(last_transaction_dt, 'Month'))  as dt
 		from skill_managers
 		where (1=1)
-			and date_part('month', birth_date) between 6 and 8
+				and date_part('month', birth_date) between 6 and 8
 		order by last_name;
-
-
-
 
