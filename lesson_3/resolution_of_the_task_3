@@ -2,7 +2,7 @@
 select * 
 from skill_managers
 where (1=1)
-		and age = 47;
+	and age = 47;
 
 select *
 from skill_price
