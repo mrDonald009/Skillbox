@@ -124,3 +124,16 @@ MySQL
                     and
                     convert(concat_ws('-', year, month, day), date) < '2020-08-26'
                 );
+Postgres
+1. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    year >= date_part('year', '2020-08-20'::date)
+                    and
+                    month >= date_part('month', '2020-08-20'::date)
+                    and
+                    day >= date_part('day', '2020-08-20'::date)
+                );
