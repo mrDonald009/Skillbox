@@ -23,7 +23,8 @@ select * from sellers limit 5;
 select 
 	table_name 
 from information_schema.tables
-where table_name in ('dispatchers', 'skill_continents', 'suppliers', 'sellers', 'exporters');
+where (1=1)
+        and table_name in ('dispatchers', 'skill_continents', 'suppliers', 'sellers', 'exporters');
 
 select top 4 * from sellers;
 
@@ -33,11 +34,13 @@ select concat('The number of rows in the table "Sellers" - ', count(*)) as resul
 select 
 	table_name 
 from information_schema.tables
-where table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters');
+where (1=1)
+        and table_name in ('dispatchers', 'distributors', 'suppliers', 'sellers', 'exporters');
 
 select 
 	column_name 
 from information_schema.columns
-where table_name = 'sellers';
+where (1=1)
+        and table_name = 'sellers';
 
 select count (*) as cnt_str from sellers;
