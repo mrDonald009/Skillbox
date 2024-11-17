@@ -2,7 +2,7 @@
 select * 
 from skill_managers
 where (1=1)
-	and age = 47;
+	    and age = 47;
 
 select *
 from skill_price
@@ -65,7 +65,7 @@ where (1=1)
 select *
 from skill_managers
 where (1=1)
-		and gender = 'M'
+        and gender = 'M'
     	and age >= 27 
 		and age <= 49;
 
@@ -85,7 +85,7 @@ where (1=1)
 select *
 from skill_managers
 where (1=1)
-		and age in ('21','24','27','31','33','35','37','41','43','45','51','55');
+        and age in ('21','24','27','31','33','35','37','41','43','45','51','55');
 
 select * 
 from skill_managers
