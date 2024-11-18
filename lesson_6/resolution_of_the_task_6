@@ -153,3 +153,19 @@ Postgres
                     and
                     make_date(year, month, day) < '2020-08-26'
                 );
+
+4. Решение 
+Microsoft SQL Server
+1. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and cast(concat_ws
+                                (
+                                     '-'
+                                    ,trim(left(dt_bad_string, charindex('ye', dt_bad_string) - 2))
+                                    ,trim(substring(dt_bad_string, 11, charindex('mo', dt_bad_string) - 11))
+                                    ,trim(substring(dt_bad_string, charindex('th', dt_bad_string) + 3, 2))
+                                ) 
+                    as date) = '2020-08-20';
