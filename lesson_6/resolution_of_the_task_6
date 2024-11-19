@@ -161,11 +161,4 @@ Microsoft SQL Server
         *
     from skill_events
     where (1=1)
-            and cast(concat_ws
-                                (
-                                     '-'
-                                    ,trim(left(dt_bad_string, charindex('ye', dt_bad_string) - 2))
-                                    ,trim(substring(dt_bad_string, 11, charindex('mo', dt_bad_string) - 11))
-                                    ,trim(substring(dt_bad_string, charindex('th', dt_bad_string) + 3, 2))
-                                ) 
-                    as date) = '2020-08-20';
+            and cast(replace(replace(replace(dt_bad_string, ' year ', '-'), ' month ', '-'), ' day', '') as date) = '2020-08-20';
