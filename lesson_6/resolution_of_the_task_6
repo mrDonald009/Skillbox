@@ -175,3 +175,10 @@ Microsoft SQL Server
                                     ,trim(substring(dt_bad_string, charindex('th', dt_bad_string) + 3, 2))
                                 ) 
                     as date) = '2020-08-20';
+MySQL
+1. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and cast(replace(replace(replace(dt_bad_string, ' year ', '-'), ' month ', '-'), ' day', '') as date) = '2020-08-20';
