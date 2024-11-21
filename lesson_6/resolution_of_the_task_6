@@ -181,4 +181,7 @@ MySQL
         *
     from skill_events
     where (1=1)
-            and cast(replace(replace(replace(dt_bad_string, ' year ', '-'), ' month ', '-'), ' day', '') as date) = '2020-08-20';
+            and str_to_date(replace(replace(replace(dt_bad_string, ' year ', ','), ' month ', ','), ' day', ','), '%Y,%m,%d') = '2020-08-20';
+
+2. 
+
