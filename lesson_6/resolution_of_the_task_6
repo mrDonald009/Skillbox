@@ -204,6 +204,18 @@ Postgres
     where (1=1)
             and cast(replace(replace(replace(dt_bad_string, ' year ', '-'), ' month ', '-'), ' day', '') as date) = '2020-08-20';
 
-  
+2. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and to_date(concat_ws
+                                        (
+                                            '/'
+                                            ,trim(left(dt_bad_string, strpos(dt_bad_string, 'ye') - 2)) 
+                                            ,trim(substring(dt_bad_string, 11, strpos(dt_bad_string, 'mo') - 11))
+                                            ,trim(substring(dt_bad_string, strpos(dt_bad_string, 'th') + 3, 2))
+                                        ), 
+                            'YYYY-MM-DD') = '2020-08-20';
 
 
