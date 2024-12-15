@@ -12,5 +12,5 @@
     from skill_market;
 3.  
     select
-    
+        sum(price_usd)
     from skill_sales;
