@@ -1,0 +1,9 @@
+1. Решение
+1.
+    select
+        count(*)
+        ,sum(cnt)
+        ,min(price)
+        ,max(price)
+    from skill_market
+    
