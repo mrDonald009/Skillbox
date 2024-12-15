@@ -5,5 +5,8 @@
         ,sum(cnt)
         ,min(price)
         ,max(price)
-    from skill_market
-    
+    from skill_market;
+2. 
+    select
+        sum(price*cnt*85)
+    from skill_market;
