@@ -17,4 +17,4 @@
 4. 
     select
         avg(price_usd * cnt * currency_rate)
-    from 
+    from skill_sales;
