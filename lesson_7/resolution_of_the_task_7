@@ -10,3 +10,7 @@
     select
         sum(price*cnt*85)
     from skill_market;
+3.  
+    select
+    
+    from skill_sales;
