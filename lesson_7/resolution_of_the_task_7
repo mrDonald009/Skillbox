@@ -8,9 +8,13 @@
     from skill_market;
 2. 
     select
-        sum(price*cnt*85)
+        sum(price * cnt * 85)
     from skill_market;
 3.  
     select
         sum(price_usd)
     from skill_sales;
+4. 
+    select
+        avg(price_usd * cnt * currency_rate)
+    from 
