@@ -18,3 +18,7 @@
     select
         avg(price_usd * cnt * currency_rate)
     from skill_sales;
+5. 
+    select 
+        sum(price_usd * cnt * currency_rate)
+    from skill_sales;
