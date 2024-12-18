@@ -22,3 +22,8 @@
     select 
         sum(price_usd * cnt * currency_rate)
     from skill_sales;
+
+2. Решение
+1. 
+    select
+    from 
