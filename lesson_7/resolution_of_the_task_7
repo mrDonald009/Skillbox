@@ -30,5 +30,9 @@
     from skill_market;
 2. 
     select
-        
+        distinct country, city
+    from skill_market;
+3. 
+    select
+        count(distinct article)
     from skill_market;
