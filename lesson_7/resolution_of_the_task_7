@@ -42,3 +42,9 @@
         ,sum(cnt * price) 
     from skill_market
     where category = 'computer';
+5. 
+    select 
+        sum(cnt)
+        ,sum(cnt * price)
+    from skill_market
+    where office_name like 'N:2%';
