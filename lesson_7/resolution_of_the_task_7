@@ -36,3 +36,9 @@
     select
         count(distinct article)
     from skill_market;
+4. 
+    select
+        sum(cnt)
+        ,sum(cnt * price) 
+    from skill_market
+    where category = 'computer';
