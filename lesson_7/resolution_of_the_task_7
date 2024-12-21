@@ -73,3 +73,12 @@
     from skill_market
     group by category, article
     order by category;
+4. 
+    select 
+        name
+        ,count(*) cnt
+        ,sum(price * cnt) total
+        ,country
+        ,city
+    from skill_marekt
+    group by name, country, city;
