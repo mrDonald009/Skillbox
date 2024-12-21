@@ -58,3 +58,10 @@
         ,count(*) cnt
     from skill_market
     group by name;
+2. 
+    select
+        name 
+        ,sum(cnt) cnt 
+        ,round(avg(price), 2) avg_price
+    from skill_market
+    group by name;
