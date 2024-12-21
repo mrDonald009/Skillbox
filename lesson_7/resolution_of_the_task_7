@@ -65,3 +65,11 @@
         ,round(avg(price), 2) avg_price
     from skill_market
     group by name;
+3.
+    select 
+        article
+        ,category
+        ,sum(price * cnt) total
+    from skill_market
+    group by category, article
+    order by category;
