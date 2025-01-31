@@ -82,3 +82,15 @@
         ,city
     from skill_marekt
     group by name, country, city;
+
+5. Решение
+1. 
+    select
+   cast(sale_dt as date) sale_dt
+  ,sum(cnt) cnt
+  ,sum(price_usd * currency_rate) total_rub
+from 
+  skill_sales
+where format(cast(sale_dt as date), 'yyyy-MM') = '2020-01'
+group by sale_dt
+order by sale_dt;
