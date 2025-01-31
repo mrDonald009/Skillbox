@@ -98,11 +98,19 @@
 5. Решение
 1. 
     select
+<<<<<<< HEAD
         cast(sale_dt as date) sale_dt
         ,sum(cnt) cnt
         ,sum(price_usd * currency_rate) total_rub
     from skill_sales
     where (1=1)
+=======
+       cast(sale_dt as date) sale_dt
+      ,sum(cnt) cnt
+      ,sum(price_usd * currency_rate) total_rub
+    from skill_sales
+    where (1=1) 
+>>>>>>> ec1caf5f7491a82b4091b2d7ebde5942cfb4e72a
             and format(cast(sale_dt as date), 'yyyy-MM') = '2020-01'
     group by sale_dt
     order by sale_dt;
