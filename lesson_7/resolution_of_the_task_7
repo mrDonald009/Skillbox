@@ -83,14 +83,26 @@
     from skill_marekt
     group by name, country, city;
 
+4. Решение
+1. 
+    select
+        sum(cnt) cnt
+        ,sum(price * cnt) total
+    from skill_market
+    where (1=1)
+            and office_type = 'Cat A'
+            and cnt >= 50
+    group by name
+    order by cnt desc;
+    
 5. Решение
 1. 
     select
-   cast(sale_dt as date) sale_dt
-  ,sum(cnt) cnt
-  ,sum(price_usd * currency_rate) total_rub
-from 
-  skill_sales
-where format(cast(sale_dt as date), 'yyyy-MM') = '2020-01'
-group by sale_dt
-order by sale_dt;
+        cast(sale_dt as date) sale_dt
+        ,sum(cnt) cnt
+        ,sum(price_usd * currency_rate) total_rub
+    from skill_sales
+    where (1=1)
+            and format(cast(sale_dt as date), 'yyyy-MM') = '2020-01'
+    group by sale_dt
+    order by sale_dt;
