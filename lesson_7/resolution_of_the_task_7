@@ -103,7 +103,7 @@
             and product_name not in ('OS')
     group by product_name, document_type
     having sum(price_usd * currency_rate * cnt) >= 5000
-    order by document_type
+    order by document_type;
 
 5. Решение
 1. 
@@ -114,5 +114,5 @@
     from skill_sales
     where (1=1) 
             and format(cast(sale_dt as date), 'yyyy-MM') = '2020-01'
-    group by sale_dt
+    group by cast(sale_dt as date)
     order by sale_dt;
