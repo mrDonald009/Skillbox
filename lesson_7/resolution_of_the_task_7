@@ -91,7 +91,6 @@
     from skill_market
     where (1=1)
             and office_type = 'Cat A'
-            and cnt >= 50
     group by name
     having sum(cnt) >= 50
     order by cnt desc;
