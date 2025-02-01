@@ -116,3 +116,14 @@
             and format(cast(sale_dt as date), 'yyyy-MM') = '2020-01'
     group by cast(sale_dt as date)
     order by sale_dt;
+2. 
+    select
+        top 1
+         cast(sale_dt as date) sale_dt
+        ,sum(cnt) cnt
+        ,sum(price_usd * currency_rate * cnt) total_rub
+    from skill_sales
+    where (1=1)
+            and cast(sale_dt as date) between '2020-01-01' and '2020-01-31'
+    group by cast(sale_dt as date)
+    order by cnt
