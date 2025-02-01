@@ -80,7 +80,7 @@
         ,sum(price * cnt) total
         ,country
         ,city
-    from skill_marekt
+    from skill_market
     group by name, country, city;
 
 4. Решение
