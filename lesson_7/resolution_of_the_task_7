@@ -94,6 +94,16 @@
     group by name
     having sum(cnt) >= 50
     order by cnt desc;
+2. 
+    select
+        sum(cnt) cnt
+        ,sum(price_usd * currency_rate * cnt) total_rub
+    from skill_sales
+    where (1=1)
+            and product_name not in ('OS')
+    group by product_name, document_type
+    having sum(price_usd * currency_rate * cnt) >= 5000
+    order by document_type
 
 5. Решение
 1. 
