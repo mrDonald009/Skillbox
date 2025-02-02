@@ -7,3 +7,7 @@
     select * from skill_product
         union
     select * from skill_product_v2;
+3. 
+    select * from skill_product
+        union all
+    select * from skill_product_v2;
