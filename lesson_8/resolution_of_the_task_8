@@ -25,3 +25,7 @@
     select * from product_customers
         intersect
     select * from product_suppliers;
+2. 
+    select * from skill_product
+        intersect
+    select * from skill_product_v2;
