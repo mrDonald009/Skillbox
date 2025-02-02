@@ -29,3 +29,7 @@
     select * from skill_product
         intersect
     select * from skill_product_v2;
+3. 
+    select * from product_customers
+        except
+    select * from product_suppliers;
