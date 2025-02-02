@@ -33,3 +33,7 @@
     select * from product_customers
         except
     select * from product_suppliers;
+4. 
+    select * from product_suppliers
+        except
+    select * from product_customers;
