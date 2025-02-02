@@ -3,15 +3,15 @@
     select * from product_customers
         union
     select * from product_suppliers;
-2.
+2.  
     select * from skill_product
         union
     select * from skill_product_v2;
-3. 
+3.  
     select * from skill_product
         union all
     select * from skill_product_v2;
-4. 
+4.  
     select product_name from skill_product
         union
     select product_name from skill_product_v2;
@@ -19,3 +19,9 @@
     select city from skill_customers
         union
     select city from skill_suppliers;
+
+2. Решение
+1.
+    select * from product_customers
+        intersect
+    select * from product_suppliers;
