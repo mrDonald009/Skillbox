@@ -1,0 +1,5 @@
+1. Решение
+1. 
+    select * from product_customers
+        union
+    select * from product_suppliers;
