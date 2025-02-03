@@ -52,3 +52,11 @@
     select
         *
     from city_suppliers, city_property;
+3. 
+    select 
+        * 
+    from gender t
+        cross join age_range t1
+    where (1=1) 
+            and t.gender = 'F'
+            and t1.age_range != '[-18]';
