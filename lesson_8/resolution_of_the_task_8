@@ -41,3 +41,10 @@
     select product_name from skill_product
         intersect
     select product_name from skill_product_v2;
+
+3. Решение
+1. 
+    select 
+        * 
+    from city_suppliers
+        cross join city_property;
