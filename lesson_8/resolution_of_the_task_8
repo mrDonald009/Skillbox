@@ -48,3 +48,7 @@
         * 
     from city_suppliers
         cross join city_property;
+2.
+    select
+        *
+    from city_suppliers, city_property;
