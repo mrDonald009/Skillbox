@@ -60,3 +60,12 @@
     where (1=1) 
             and t.gender = 'F'
             and t1.age_range != '[-18]';
+4. 
+    select
+        t.week_day
+        ,t1.name
+        ,t1.lesson_begin + ' - ' + t1.lesson_end lesson_time
+    from week_days t 
+        cross join lessons t1
+    where (1=1)
+            and t.is_weekend = '0';
