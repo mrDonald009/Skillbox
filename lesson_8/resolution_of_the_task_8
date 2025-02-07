@@ -77,3 +77,19 @@
         cross join skill_suppliers t1
     where (1=1) 
             and (t.product = 'CPU' and t1.product = 'CPU');
+
+4. Решение
+1.
+    select
+        customer
+        ,city
+        ,product
+        ,1 as cnt
+    from skill_customers
+    union 
+    select 
+        supplier
+        ,city
+        ,product
+        ,cnt
+    from skill_suppliers;
