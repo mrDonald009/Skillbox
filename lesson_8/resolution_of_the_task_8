@@ -93,3 +93,10 @@
         ,product
         ,cnt
     from skill_suppliers;
+2. 
+    select count(*) from skill_customers;
+    select count(*) from skill_suppliers;
+
+    select customer from skill_customers
+    union
+    select supplier from skill_suppliers;
