@@ -100,3 +100,9 @@
     select customer from skill_customers
     union
     select supplier from skill_suppliers;
+3. 
+    select
+        substring(t.supplier, 1, charindex(' ', t.supplier)) name
+        ,substring(t1.supplier, charindex(' ', t1.supplier) + 1, len(t1.supplier)) surname
+    from skill_suppliers t
+        cross join skill_suppliers t1
