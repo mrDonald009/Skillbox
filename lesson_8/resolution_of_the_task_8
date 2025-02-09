@@ -102,7 +102,7 @@
     select supplier from skill_suppliers;
 3. 
     select
-        substring(t.supplier, 1, charindex(' ', t.supplier)) name
-        ,substring(t1.supplier, charindex(' ', t1.supplier) + 1, len(t1.supplier)) surname
+        substring(t.supplier, 1, charindex(' ', t.supplier)) as nm_supplier
+        ,substring(t1.supplier, charindex(' ', t1.supplier) + 1, len(t1.supplier)) as surnm_supplier
     from skill_suppliers t
-        cross join skill_suppliers t1
+        cross join skill_suppliers t1;
