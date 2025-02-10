@@ -5,3 +5,9 @@
     from employee t
         inner join age_range t1
             on t.age_range_id = t1.age_range_id;
+2. 
+    select 
+        * 
+    from employee t
+        inner join gender t1
+            on t.gender_id = t1.gender_id;            
