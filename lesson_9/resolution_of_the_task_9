@@ -32,3 +32,12 @@
     from employee e
         inner join age_range
             on e.age_range_id = age_range.age_range_id;       
+
+2. 
+    select 
+        e.name
+        ,e.age
+        ,g.gender
+    from employee e
+        inner join gender g
+            on e.gender_id = g.gender_id;   
