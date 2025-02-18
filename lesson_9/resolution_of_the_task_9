@@ -17,4 +17,9 @@
     from employee t
         inner join department t1
             on t.department_id = t1.department_id;
-            
+4. 
+    select 
+        * 
+    from employee t
+        left join department t1
+            on t.department_id = t1.department_id;       
