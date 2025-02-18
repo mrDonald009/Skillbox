@@ -22,4 +22,13 @@
         * 
     from employee t
         left join department t1
-            on t.department_id = t1.department_id;       
+            on t.department_id = t1.department_id;
+2. Решение
+1. 
+    select
+        e.name
+        ,e.age
+        ,age_range.age_range
+    from employee e
+        inner join age_range
+            on e.age_range_id = age_range.age_range_id;       
