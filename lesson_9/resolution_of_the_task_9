@@ -41,3 +41,11 @@
     from employee e
         inner join gender g
             on e.gender_id = g.gender_id;   
+3. 
+    select 
+        e.name
+        ,e.age
+        ,d.name as department
+    from employee e
+        inner join department d
+            on e.department_id = d.department_id;  
