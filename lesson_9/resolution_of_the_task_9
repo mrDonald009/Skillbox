@@ -71,3 +71,16 @@
             on e.gender_id = g.gender_id
         inner join department d
             on e.department_id = d.department_id;
+2. 
+    select
+        e.name
+        ,e.age
+        ,a.age_range
+        ,d.name as department
+    from employee e
+        inner join age_range a
+            on e.age_range_id = a.age_range_id
+        inner join gender g
+            on e.gender_id = g.gender_id
+        left join department d
+            on e.department_id = d.department_id;
