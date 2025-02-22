@@ -136,4 +136,4 @@
             on e.age_range_id = r1.age_range_id
             and e.age <= r1.to_value
     where (1=1)
-            and e.age > r1.from_value
+            and e.age > r1.from_value;
