@@ -114,4 +114,14 @@
             on e.department_id = d.department_id
     where (1=1)
             and d.name in ('Marketing', 'IT')
-            and e.age >= 25;            
+            and e.age >= 25;
+4. Решение 
+1. 
+    select 
+        e.name
+        ,e.age
+        ,dt.name as department
+    from employee e
+        left join department_test dt
+            on e.department_id = dt.department_id
+            and dt.department_id in (1, 2, 3);
