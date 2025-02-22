@@ -135,3 +135,15 @@
         left join age_range_band r1
             on r1.from_value < e.age
             and e.age <= r1.to_value;
+2.
+    select 
+        e.name
+        ,e.age
+        ,r1.age_range true_range
+        ,r2.age_range
+    from employee e
+        left join age_range_band r1
+            on r1.from_value < e.age
+            and e.age <= r1.to_value
+        left join age_range r2
+            on e.age_range_id = r2.age_range_id;
