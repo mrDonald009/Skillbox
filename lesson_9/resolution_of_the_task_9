@@ -133,7 +133,5 @@
         ,r1.age_range true_range
     from employee e
         left join age_range_band r1
-            on e.age_range_id = r1.age_range_id
-            and e.age <= r1.to_value
-    where (1=1)
-            and e.age > r1.from_value;
+            on r1.from_value < e.age
+            and e.age <= r1.to_value;
