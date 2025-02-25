@@ -161,3 +161,5 @@
             on e.age_range_id = r2.age_range_id
     where (1=1)
             and r1.age_range != r2.age_range;
+
+            
