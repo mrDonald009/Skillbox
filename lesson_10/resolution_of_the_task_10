@@ -11,3 +11,9 @@
     from gender t
         right join employee t1
             on t.gender_id = t1.gender_id;
+3. 
+    select 
+        *
+    from department t
+        right join employee t1
+            on t.department_id = t1.department_id;
