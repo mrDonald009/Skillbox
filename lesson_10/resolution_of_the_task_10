@@ -1,0 +1,9 @@
+1. Решение
+1. 
+    select 
+        *
+    from age_range t
+        right join employee t1
+            on t.age_range_id = t1.age_range_id;
+2.
+                
