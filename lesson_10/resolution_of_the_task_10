@@ -25,3 +25,11 @@
     from gender t1
         right join employee t2
             on t1.gender_id = t2.gender_id;
+5. 
+    select 
+        t2.name
+        ,t1.name
+        ,t2.age
+    from department t1
+        right join employee t2
+    on t1.department_id = t2.department_id;
