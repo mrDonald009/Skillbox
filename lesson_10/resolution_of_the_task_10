@@ -55,3 +55,14 @@
             on t.manager_id = t1.manager_id
         full join skill_product t2 
             on t.product_id = t2.product_id;
+4. 
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+    from skill_sales_april t1
+        full join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        full join skill_product t3
+            on t1.product_id = t3.product_id;
