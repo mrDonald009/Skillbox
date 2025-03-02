@@ -41,3 +41,9 @@
     from skill_sales_april t
         full join skill_managers t1
             on t.manager_id = t1.manager_id;
+2. 
+    select
+        *
+    from skill_sales_april t
+        full join skill_product t1
+            on t.product_id = t1.product_id;
