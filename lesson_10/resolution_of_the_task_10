@@ -33,3 +33,11 @@
     from department t1
         right join employee t2
     on t1.department_id = t2.department_id;
+
+2. Решение 
+1. 
+    select
+        *
+    from skill_sales_april t
+        full join skill_managers t1
+            on t.manager_id = t1.manager_id;
