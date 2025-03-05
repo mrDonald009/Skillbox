@@ -100,4 +100,21 @@
             and t2.manager_id is null
             or t3.product_id is null
             or t4.product_category_id is null;
-
+3. 
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+        ,t4.product_category_name
+    from skill_sales_april t1
+        full join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        full join skill_product t3 
+            on t1.product_id = t3.product_id 
+        full join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    where (1=1)
+            and t2.manager_id is not null
+            and t3.product_id is not null
+            and t4.product_category_id is not null;
