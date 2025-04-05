@@ -132,3 +132,30 @@
             on t1.product_id = t3.product_id 
         inner join skill_product_category t4
             on t3.product_category_id = t4.product_category_id;
+
+4. Решение
+    select
+        month(dt) month
+        ,product_category_name
+        ,sum(cnt) cnt
+        ,sum(cnt*price_usd) total_usd
+    from skill_sales_march t1
+        left join skill_product t3
+            on t1.product_id = t3.product_id
+        left join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    group by month(dt), product_category_name
+
+    union 
+
+    select
+        month(dt) month
+        ,product_category_name
+        ,sum(cnt) cnt
+        ,sum(cnt*price_usd) total_usd
+    from skill_sales_april t1
+        left join skill_product t3
+            on t1.product_id = t3.product_id
+        left join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    group by month(dt), product_category_name;
