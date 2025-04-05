@@ -134,6 +134,7 @@
             on t3.product_category_id = t4.product_category_id;
 
 4. Решение
+1.    
     select
         month(dt) month
         ,product_category_name
