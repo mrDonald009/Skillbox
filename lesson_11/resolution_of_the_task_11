@@ -1,0 +1,26 @@
+1. Решение
+1.
+    drop table if exists managers_1
+    create table managers_1(
+        manager_id  int
+        ,first_name varchar(255)
+        ,last_name  varchar(255)
+        ,age        int 
+        ,gender     varchar(1)
+        ,age_group  varchar(255)
+    );
+2.
+a.
+    insert into 
+    managers_1 
+        (manager_id   ,first_name   ,last_name   ,age   ,gender   ,age_group)
+    values
+        (1, 'Elis', 'Forbes', 27, 'F', '(22:35)')
+        ,(2, 'Piter', 'Robinson', 24, 'M', '(18:25)')
+        ,(3, 'Piter', 'Graham', 23, 'M', '(18:25)');
+b.  select * from managers_1;
+c.  delete from managers_1;
+d.  select * from managers_1;
+e.  drop table if exists managers_1;
+f.  select * from managers_1;
+
