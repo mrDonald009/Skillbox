@@ -27,4 +27,12 @@
 2. Решение
 1. 
     select * into managers_2 from skill_managers;
-
+2. 
+    select * from managers_2;
+3. 
+    select * into managers_M 
+    from skill_managers t 
+    where (1=1) 
+            and t.gender = 'M';
+4. 
+    select * from managers_M;          
