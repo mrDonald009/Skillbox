@@ -35,4 +35,9 @@
     where (1=1) 
             and t.gender = 'M';
 4. 
-    select * from managers_M;          
+    select * from managers_M;  
+
+3. Решение
+1.
+    create table managers_2 as 
+        select * from skill_managers;
