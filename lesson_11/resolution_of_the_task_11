@@ -41,3 +41,11 @@
 1.
     create table managers_2 as 
         select * from skill_managers;
+2. 
+    select * from managers_2;
+3. 
+    drop table if exists managers_2;
+    create table managers_2 as 
+        select * from skill_managers t where t.gender = 'M';
+4. 
+    select * from managers_2;    
