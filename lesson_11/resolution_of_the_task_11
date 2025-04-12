@@ -49,3 +49,23 @@
         select * from skill_managers t where t.gender = 'M';
 4. 
     select * from managers_2;    
+
+4. Решение
+1. 
+    update t
+        set t.product_id = 2
+    --select *
+    from skill_product_v2 t
+    where (1=1)
+            and t.product_name = 'OS';
+2. 
+    update t
+        set t.product_id = 3
+    --select *
+    from skill_product_v2 t
+    where (1=1)
+            t.product_name = 'HDD'; 
+3. 
+    delete from skill_product_v2
+    where (1=1)
+            and product_id is null;
