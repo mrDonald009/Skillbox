@@ -78,3 +78,6 @@
         from skill_customers t 
         where (1=1) 
                 and t.state in ('Alabama', 'California', 'Nevada');
+2. 
+    alter table skill_customers_info 
+        add gender varchar(1);                
