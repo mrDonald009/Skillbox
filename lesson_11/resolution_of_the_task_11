@@ -80,4 +80,10 @@
                 and t.state in ('Alabama', 'California', 'Nevada');
 2. 
     alter table skill_customers_info 
-        add gender varchar(1);                
+        add gender varchar(1);
+3. 
+    update skill_customers_info
+    set gender = 'F';
+    update skill_customers_info
+    set gender = 'M'
+    where name in ('Bradley Kramer', 'Kendrick Blevins', 'Giovanny Robinson', 'Darryl Mathis');     
