@@ -35,7 +35,7 @@
     where (1=1) 
             and t.gender = 'M';
 4. 
-    select * from managers_M;  
+    select * from managers_M;
 
 3. Решение
 1.
