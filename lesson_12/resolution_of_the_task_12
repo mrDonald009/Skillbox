@@ -1,0 +1,6 @@
+1. Решение
+1.
+    select 
+        *
+        ,row_number() over(order by cnt desc) as num 
+    from skill_market;
