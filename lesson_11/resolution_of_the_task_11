@@ -112,4 +112,21 @@
                                             select top 1 customer_id 
                                             from skill_deals 
                                             order by (cnt * price_usd) desc
-                                            );                                            
+                                            );
+3. 
+    select * 
+    from skill_customers_suppliers
+    where (1=1)
+            and customers_suppliers_id in  (
+                                            select customer_id 
+                                            from skill_deals 
+                                            where (1=1) 
+                                                    and customer_id = supplier_id
+                                            union
+                                            select top 1 customer_id 
+                                            from skill_deals 
+                                            order by (cnt * price_usd) desc
+                                            union
+                                            select top 1 supplier_id
+                                            from skill_deals
+                                            order by (cnt * price_usd) desc);    
