@@ -9,4 +9,11 @@
         *
         ,row_number() over(order by cnt) as num 
     from skill_market 
-    order by cnt;    
+    order by cnt;
+3. 
+    select 
+        *
+        ,row_number() over(order by cnt) as num
+        ,row_number() over(order by country, city, office_name, price) as num_2
+    from skill_market
+    order by country, city, office_name, price;
