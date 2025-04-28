@@ -32,3 +32,9 @@
         *
         ,row_number() over(partition by city) as num
     from skill_market;
+2.
+    select 
+        * 
+        ,row_number() over(partition by office_type, name) as num 
+    from skill_market 
+    order by num;
