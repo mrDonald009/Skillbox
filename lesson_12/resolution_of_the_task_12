@@ -17,3 +17,12 @@
         ,row_number() over(order by country, city, office_name, price) as num_2
     from skill_market
     order by country, city, office_name, price;
+4. 
+    select
+        *
+        ,row_number() over() as num1
+        ,count(*) over() as total_rows
+        ,sum(cnt) over() as total_cnt
+        ,sum(price * cnt) over() as total
+    from skill_market;
+    
