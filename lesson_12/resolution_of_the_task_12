@@ -38,3 +38,9 @@
         ,row_number() over(partition by office_type, name) as num 
     from skill_market 
     order by num;
+3. 
+    select 
+        * 
+        ,row_number() over(partition by cnt order by cnt) num1
+        ,row_number() over(partition by cnt order by cnt desc) num2
+    from skill_market;    
