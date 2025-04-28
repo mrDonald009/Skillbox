@@ -25,4 +25,10 @@
         ,sum(cnt) over() as total_cnt
         ,sum(price * cnt) over() as total
     from skill_market;
-    
+
+2. Решение
+1.
+    select 
+        *
+        ,row_number() over(partition by city) as num
+    from skill_market;
