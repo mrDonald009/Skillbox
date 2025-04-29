@@ -41,6 +41,6 @@
 3. 
     select 
         * 
-        ,row_number() over(partition by cnt order by cnt) num1
-        ,row_number() over(partition by cnt order by cnt desc) num2
-    from skill_market;    
+        ,row_number() over(partition by office_name order by cnt) num1
+        ,row_number() over(partition by office_name order by cnt desc) num2
+    from skill_market;
