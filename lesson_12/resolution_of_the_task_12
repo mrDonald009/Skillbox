@@ -41,14 +41,14 @@
 3. 
     select 
         * 
-        ,row_number() over(partition by office_name order by cnt) num1
-        ,row_number() over(partition by office_name order by cnt desc) num2
+        ,row_number() over(partition by office_name order by cnt) as num1
+        ,row_number() over(partition by office_name order by cnt desc) as num2
     from skill_market;
 4. 
     select 
         *
-        ,row_number() over(partition by city) num1
-        ,count(*) over(partition by city) total_rows
-        ,sum(cnt) over(partition by city) total_cnt
-        ,sum(cnt*price) over (partition by city) total
+        ,row_number() over(partition by city) as num1
+        ,count(*) over(partition by city) as total_rows
+        ,sum(cnt) over(partition by city) as total_cnt
+        ,sum(cnt*price) over (partition by city) as total
     from skill_market;
