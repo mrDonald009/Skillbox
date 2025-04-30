@@ -57,5 +57,5 @@
 1. 
     select
         *
-        ,sum(cnt*price) over(partition by name) as total_sum
+        ,sum(cnt*price) over(partition by name order by article) as total_sum
     from skill_market;
