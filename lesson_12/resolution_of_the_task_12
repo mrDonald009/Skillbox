@@ -59,3 +59,8 @@
         *
         ,sum(cnt*price) over(partition by name order by article) as total_sum
     from skill_market;
+2.
+    select
+        *   
+        ,sum(cnt*price) over(partition by name order by article rows between current row and unbounded following) as total_sum
+        from skill_market;
