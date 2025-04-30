@@ -77,3 +77,9 @@
         ,first_value(seller_uid) over(partition by lot_uid order by bid_time) as seller_uid
     from skill_bids
     order by lot_uid, bid_time;
+2. 
+    select 
+        *
+        ,max(rate) over(partition by lot_uid) as max_rate
+    from skill_bids
+    order by lot_uid, bid_time;
