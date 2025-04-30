@@ -69,3 +69,11 @@
         *   
         ,sum(cnt*price) over(partition by name order by article rows between current row and 1 following) as total_sum
     from skill_market;
+
+4. Решение 
+1.
+    select 
+        *
+        ,first_value(seller_uid) over(partition by lot_uid order by bid_time) as seller_uid
+    from skill_bids
+    order by lot_uid, bid_time;
