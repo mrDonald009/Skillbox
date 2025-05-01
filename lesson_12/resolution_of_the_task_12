@@ -83,3 +83,10 @@
         ,max(rate) over(partition by lot_uid) as max_rate
     from skill_bids
     order by lot_uid, bid_time;
+3. 
+    select 
+        *
+        ,bid_time - first_value(bid_time) over(partition by lot_uid order by bid_time) as diff_time
+    from skill_bids
+    order by lot_uid, bid_time;
+    
