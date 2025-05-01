@@ -89,4 +89,15 @@
         ,bid_time - first_value(bid_time) over(partition by lot_uid order by bid_time) as diff_time
     from skill_bids
     order by lot_uid, bid_time;
-    
+
+5. Решение 
+1. 
+    select 
+        t.* 
+    from 
+        (select 
+         *
+         ,bid_time - first_value(bid_time) over(partition by lot_uid order by bid_time) as diff_time
+         from skill_bids)
+     where (1=1)
+            and t.diff_time <= '00:00:30'
