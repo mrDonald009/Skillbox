@@ -103,7 +103,11 @@
             and t.diff_time <= '00:00:30';
 2. 
     select 
-        t2.*
+        t2.bid_time
+        ,t2.seller_uid
+        ,t2.customer_uid
+        ,t2.lot_uid
+        ,t2.rate
     from
         (select 
             t1.*
