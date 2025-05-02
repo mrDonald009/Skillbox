@@ -1,0 +1,8 @@
+13.3 Решение
+1.
+    show tables;
+2. 
+    select * from skill_raw_data_csv limit 10;
+    select * from skill_raw_data_mix limit 10;
+    select * from skill_raw_data_semi limit 10;
+    select * from skill_sales limit 10;
