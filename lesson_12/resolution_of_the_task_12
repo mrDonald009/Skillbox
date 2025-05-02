@@ -100,4 +100,30 @@
          ,bid_time - first_value(bid_time) over(partition by lot_uid order by bid_time) as diff_time
          from skill_bids) as t
      where (1=1)
-            and t.diff_time <= '00:00:30'
+            and t.diff_time <= '00:00:30';
+2. 
+    select 
+        t2.*
+    from
+        (select 
+            t1.*
+            ,first_value(t1.seller_uid)
+            over(partition by t1.lot_uid order by t1.bid_time) as lot_seller_id
+            ,row_number() over(partition by t1.lot_uid order by t1.rate desc) as max_rate_pos
+        from 
+            (select 
+                t.* 
+             from 
+                (select 
+                    *
+                    ,bid_time - first_value(bid_time) over(partition by lot_uid order by bid_time) as diff_time
+                from skill_bids
+                ) as t
+             where (1=1)
+                    and t.diff_time <= '00:00:30'
+            ) as t1
+        ) as t2
+    where (1=1)
+            and t2.max_rate_pos = 1
+            and t2.event = 'request';
+            
