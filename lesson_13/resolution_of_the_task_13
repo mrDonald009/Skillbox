@@ -31,3 +31,5 @@
     show create table skill_sales;
 2. 
     show fields from skill_sales;
+3. 
+    select distinct office from skill_sales;
