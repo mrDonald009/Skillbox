@@ -33,3 +33,32 @@
     show fields from skill_sales;
 3. 
     select distinct office from skill_sales;
+4. 
+    select 
+        office
+        ,count(*)
+        ,length(office) 
+    from skill_sales 
+    group by office, length(office);
+    
+    select * 
+    from skill_sales 
+    where (1=1)
+            and office like '%оффис%';
+    
+    update skill_sales
+        set office = replace(office, 'оффис', 'office')
+    where (1=1)
+            and office like '%оффис%';
+
+    select 
+        office
+        ,count(*)
+        ,length(office) 
+    from skill_sales 
+    group by office, length(office);
+    
+    select * 
+    from skill_sales 
+    where (1=1)
+            and office like '%оффис%';
