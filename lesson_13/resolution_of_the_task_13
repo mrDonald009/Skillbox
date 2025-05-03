@@ -29,3 +29,5 @@
 13.5 Решение 
 1. 
     show create table skill_sales;
+2. 
+    show fields from skill_sales;
