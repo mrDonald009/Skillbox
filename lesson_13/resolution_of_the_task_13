@@ -16,12 +16,16 @@
             delim, '');
 
     select 
-        split_str(replace(data,';', ','),',',1) id,
-        split_str(replace(data,';', ','),',',2) dt,
-        split_str(replace(data,';', ','),',',3) tm,
-        split_str(replace(data,';', ','),',',4) product_categoty,
-        split_str(replace(data,';', ','),',',5) product,
-        split_str(replace(data,';', ','),',',6) office,
-        split_str(replace(data,';', ','),',',7) cnt,
-        split_str(replace(data,';', ','),',',8) price
+        split_str(replace(data,';', ','),',',1) id
+        ,split_str(replace(data,';', ','),',',2) dt
+        ,split_str(replace(data,';', ','),',',3) tm
+        ,split_str(replace(data,';', ','),',',4) product_categoty
+        ,split_str(replace(data,';', ','),',',5) product
+        ,split_str(replace(data,';', ','),',',6) office
+        ,split_str(replace(data,';', ','),',',7) cnt
+        ,split_str(replace(data,';', ','),',',8) price
     from skill_raw_data_mix;
+
+13.5 Решение 
+1. 
+    show create table skill_sales;
