@@ -6,3 +6,22 @@
     select * from skill_raw_data_mix limit 10;
     select * from skill_raw_data_semi limit 10;
     select * from skill_sales limit 10;
+
+13.4 Решение 
+    create function split_str(x varchar(255),delim varchar(12),pos int)
+        returns varchar(255)
+        deterministic
+        return replace(substring(substring_index(x, delim, pos),
+            length(substring_index(x, delim, pos -1)) + 1),
+            delim, '');
+
+    select 
+        split_str(replace(data,';', ','),',',1) id,
+        split_str(replace(data,';', ','),',',2) dt,
+        split_str(replace(data,';', ','),',',3) tm,
+        split_str(replace(data,';', ','),',',4) product_categoty,
+        split_str(replace(data,';', ','),',',5) product,
+        split_str(replace(data,';', ','),',',6) office,
+        split_str(replace(data,';', ','),',',7) cnt,
+        split_str(replace(data,';', ','),',',8) price
+    from skill_raw_data_mix;
