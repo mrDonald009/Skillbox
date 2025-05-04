@@ -80,3 +80,9 @@
     from skill_sales 
     group by product, dt 
     order by sum(cnt);
+
+13.7 Решение 
+1. 
+    show create table product;
+2. 
+    
