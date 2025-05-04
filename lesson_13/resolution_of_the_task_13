@@ -62,3 +62,13 @@
     from skill_sales 
     where (1=1)
             and office like '%оффис%';
+
+13.6 Решение 
+1.
+    select 
+        day(dt) 
+        ,office 
+        ,sum(cnt)
+    from skill_sales 
+    group by dt,office 
+    order by dt, office;
