@@ -74,9 +74,9 @@
     order by dt, office;
 2. 
     select 
-        product, 
-        dt, 
-        sum(cnt) as total_cnt  
+        product
+        ,dt
+        ,sum(cnt) as total_cnt  
     from skill_sales 
     group by product, dt 
     order by sum(cnt);
