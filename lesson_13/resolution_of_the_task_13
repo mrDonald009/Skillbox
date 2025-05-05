@@ -91,3 +91,33 @@
         ,'office' varchar(255)
         ,primary key ('office_id')
     );
+
+    insert into product (product)
+    select 
+        distinct t.product
+    from skill_sales t 
+    order by t.product;
+
+    update skill_sales
+        set office = replace(office, 'оффис', 'office')
+    where (1=1)
+            and office like '%оффис%';
+    insert into office (office)
+        select distinct t.office
+    from skill_sales t 
+    order by t.office;
+3.
+    insert into product (product)
+    select 
+        distinct t.product
+    from skill_sales t 
+    order by t.product;
+
+    update skill_sales
+        set office = replace(office, 'оффис', 'office')
+    where (1=1)
+            and office like '%оффис%';
+    insert into office (office)
+        select distinct t.office
+    from skill_sales t 
+    order by t.office;    
