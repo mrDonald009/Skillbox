@@ -120,4 +120,8 @@
     insert into office (office)
         select distinct t.office
     from skill_sales t 
-    order by t.office;    
+    order by t.office;
+4. 
+    select * from product;
+    select * from office;
+    
