@@ -1,0 +1,162 @@
+1. Решение
+1. 
+    select 
+        *
+    from age_range t
+        right join employee t1
+            on t.age_range_id = t1.age_range_id;
+2.
+    select 
+        *
+    from gender t
+        right join employee t1
+            on t.gender_id = t1.gender_id;
+3. 
+    select 
+        *
+    from department t
+        right join employee t1
+            on t.department_id = t1.department_id;
+4. 
+    select 
+        t2.name
+        ,t1.gender
+        ,t2.age
+    from gender t1
+        right join employee t2
+            on t1.gender_id = t2.gender_id;
+5. 
+    select 
+        t2.name
+        ,t1.name
+        ,t2.age
+    from department t1
+        right join employee t2
+    on t1.department_id = t2.department_id;
+
+2. Решение 
+1. 
+    select
+        *
+    from skill_sales_april t
+        full join skill_managers t1
+            on t.manager_id = t1.manager_id;
+2. 
+    select
+        *
+    from skill_sales_april t
+        full join skill_product t1
+            on t.product_id = t1.product_id;
+3.
+    select
+        *
+    from skill_sales_april t
+        full join skill_managers t1
+            on t.manager_id = t1.manager_id
+        full join skill_product t2 
+            on t.product_id = t2.product_id;
+4. 
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+    from skill_sales_april t1
+        full join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        full join skill_product t3
+            on t1.product_id = t3.product_id;
+
+3. Решение
+1. 
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+        ,t4.product_category_name
+    from skill_sales_april t1
+        full join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        full join skill_product t3 
+            on t1.product_id = t3.product_id 
+        full join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id;
+2.
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+        ,t4.product_category_name
+    from skill_sales_april t1
+        full join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        full join skill_product t3 
+            on t1.product_id = t3.product_id 
+        full join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    where (1=1)
+            and t2.manager_id is null
+            or t3.product_id is null
+            or t4.product_category_id is null;
+3. 
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+        ,t4.product_category_name
+    from skill_sales_april t1
+        full join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        full join skill_product t3 
+            on t1.product_id = t3.product_id 
+        full join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    where (1=1)
+            and t2.manager_id is not null
+            and t3.product_id is not null
+            and t4.product_category_id is not null;
+4. 
+    select
+        t1.dt
+        ,t2.first_name
+        ,t2.last_name
+        ,t3.product_name
+        ,t4.product_category_name
+    from skill_sales_april t1
+        inner join skill_managers t2
+            on t1.manager_id = t2.manager_id
+        inner join skill_product t3 
+            on t1.product_id = t3.product_id 
+        inner join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id;
+
+4. Решение
+1.    
+    select
+        month(dt) month
+        ,product_category_name
+        ,sum(cnt) cnt
+        ,sum(cnt*price_usd) total_usd
+    from skill_sales_march t1
+        left join skill_product t3
+            on t1.product_id = t3.product_id
+        left join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    group by month(dt), product_category_name
+
+    union 
+
+    select
+        month(dt) month
+        ,product_category_name
+        ,sum(cnt) cnt
+        ,sum(cnt*price_usd) total_usd
+    from skill_sales_april t1
+        left join skill_product t3
+            on t1.product_id = t3.product_id
+        left join skill_product_category t4
+            on t3.product_category_id = t4.product_category_id
+    group by month(dt), product_category_name;

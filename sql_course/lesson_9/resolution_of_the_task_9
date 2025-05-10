@@ -1,0 +1,165 @@
+1. Решение 
+1. 
+    select 
+        * 
+    from employee t
+        inner join age_range t1
+            on t.age_range_id = t1.age_range_id;
+2. 
+    select 
+        * 
+    from employee t
+        inner join gender t1
+            on t.gender_id = t1.gender_id;            
+3. 
+    select 
+        *
+    from employee t
+        inner join department t1
+            on t.department_id = t1.department_id;
+4. 
+    select 
+        * 
+    from employee t
+        left join department t1
+            on t.department_id = t1.department_id;
+2. Решение
+1. 
+    select
+        e.name
+        ,e.age
+        ,age_range.age_range
+    from employee e
+        inner join age_range
+            on e.age_range_id = age_range.age_range_id;       
+
+2. 
+    select 
+        e.name
+        ,e.age
+        ,g.gender
+    from employee e
+        inner join gender g
+            on e.gender_id = g.gender_id;   
+3. 
+    select 
+        e.name
+        ,e.age
+        ,d.name as department
+    from employee e
+        inner join department d
+            on e.department_id = d.department_id;  
+4. 
+    select 
+        e.name
+        ,e.age
+        ,d.name as department
+    from employee e
+        left join department d
+            on e.department_id = d.department_id;
+3. Решение
+1.
+    select
+        e.name
+        ,e.age
+        ,a.age_range
+        ,d.name as department
+    from employee e
+        inner join age_range a
+            on e.age_range_id = a.age_range_id
+        inner join gender g
+            on e.gender_id = g.gender_id
+        inner join department d
+            on e.department_id = d.department_id;
+2. 
+    select
+        e.name
+        ,e.age
+        ,a.age_range
+        ,d.name as department
+    from employee e
+        inner join age_range a
+            on e.age_range_id = a.age_range_id
+        inner join gender g
+            on e.gender_id = g.gender_id
+        left join department d
+            on e.department_id = d.department_id;
+3. 
+    select
+        e.name
+        ,e.age
+        ,a.age_range
+        ,d.name as department
+    from employee e
+        inner join age_range a
+            on e.age_range_id = a.age_range_id
+        inner join gender g
+            on e.gender_id = g.gender_id
+        left join department d
+            on e.department_id = d.department_id
+    where (1=1)
+            and len(e.name) > 10;
+4. 
+    select
+        e.name
+        ,e.age
+        ,a.age_range
+        ,d.name as department
+    from employee e
+        inner join age_range a
+            on e.age_range_id = a.age_range_id
+        inner join gender g
+            on e.gender_id = g.gender_id
+        left join department d
+            on e.department_id = d.department_id
+    where (1=1)
+            and d.name in ('Marketing', 'IT')
+            and e.age >= 25;
+4. Решение 
+1. 
+    select 
+        e.name
+        ,e.age
+        ,dt.name as department
+    from employee e
+        left join department_test dt
+            on e.department_id = dt.department_id
+            and dt.department_id in (1, 2, 3);
+5. Решение 
+1. 
+    select 
+        e.name
+        ,e.age
+        ,r1.age_range true_range
+    from employee e
+        left join age_range_band r1
+            on r1.from_value < e.age
+            and e.age <= r1.to_value;
+2.
+    select 
+        e.name
+        ,e.age
+        ,r1.age_range true_range
+        ,r2.age_range
+    from employee e
+        left join age_range_band r1
+            on r1.from_value < e.age
+            and e.age <= r1.to_value
+        left join age_range r2
+            on e.age_range_id = r2.age_range_id;
+3. 
+    select 
+        e.name
+        ,e.age
+        ,r1.age_range true_range
+        ,r2.age_range
+    from employee e
+        left join age_range_band r1
+            on r1.from_value < e.age
+            and e.age <= r1.to_value
+        left join age_range r2
+            on e.age_range_id = r2.age_range_id
+    where (1=1)
+            and r1.age_range != r2.age_range;
+
+            
