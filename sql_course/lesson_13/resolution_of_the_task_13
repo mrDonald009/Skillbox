@@ -1,0 +1,127 @@
+13.3 Решение
+1.
+    show tables;
+2. 
+    select * from skill_raw_data_csv limit 10;
+    select * from skill_raw_data_mix limit 10;
+    select * from skill_raw_data_semi limit 10;
+    select * from skill_sales limit 10;
+
+13.4 Решение 
+    create function split_str(x varchar(255),delim varchar(12),pos int)
+        returns varchar(255)
+        deterministic
+        return replace(substring(substring_index(x, delim, pos),
+            length(substring_index(x, delim, pos -1)) + 1),
+            delim, '');
+
+    select 
+        split_str(replace(data,';', ','),',',1) id
+        ,split_str(replace(data,';', ','),',',2) dt
+        ,split_str(replace(data,';', ','),',',3) tm
+        ,split_str(replace(data,';', ','),',',4) product_categoty
+        ,split_str(replace(data,';', ','),',',5) product
+        ,split_str(replace(data,';', ','),',',6) office
+        ,split_str(replace(data,';', ','),',',7) cnt
+        ,split_str(replace(data,';', ','),',',8) price
+    from skill_raw_data_mix;
+
+13.5 Решение 
+1. 
+    show create table skill_sales;
+2. 
+    show fields from skill_sales;
+3. 
+    select distinct office from skill_sales;
+4. 
+    select 
+        office
+        ,count(*)
+        ,length(office) 
+    from skill_sales 
+    group by office, length(office);
+    
+    select * 
+    from skill_sales 
+    where (1=1)
+            and office like '%оффис%';
+    
+    update skill_sales
+        set office = replace(office, 'оффис', 'office')
+    where (1=1)
+            and office like '%оффис%';
+
+    select 
+        office
+        ,count(*)
+        ,length(office) 
+    from skill_sales 
+    group by office, length(office);
+    
+    select * 
+    from skill_sales 
+    where (1=1)
+            and office like '%оффис%';
+
+13.6 Решение 
+1.
+    select 
+        day(dt) as dt 
+        ,office
+        ,sum(cnt) as total_cnt
+    from skill_sales 
+    group by dt,office 
+    order by dt, office;
+2. 
+    select 
+        product
+        ,dt
+        ,sum(cnt) as total_cnt  
+    from skill_sales 
+    group by product, dt 
+    order by sum(cnt);
+
+13.7 Решение 
+1. 
+    show create table product;
+2. 
+    drop table if exists office;
+    create table 'office' (
+        'office_id' int not null auto_increment
+        ,'office' varchar(255)
+        ,primary key ('office_id')
+    );
+
+    insert into product (product)
+    select 
+        distinct t.product
+    from skill_sales t 
+    order by t.product;
+
+    update skill_sales
+        set office = replace(office, 'оффис', 'office')
+    where (1=1)
+            and office like '%оффис%';
+    insert into office (office)
+        select distinct t.office
+    from skill_sales t 
+    order by t.office;
+3.
+    insert into product (product)
+    select 
+        distinct t.product
+    from skill_sales t 
+    order by t.product;
+
+    update skill_sales
+        set office = replace(office, 'оффис', 'office')
+    where (1=1)
+            and office like '%оффис%';
+    insert into office (office)
+        select distinct t.office
+    from skill_sales t 
+    order by t.office;
+4. 
+    select * from product;
+    select * from office;
+    

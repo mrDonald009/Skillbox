@@ -1,0 +1,108 @@
+1. Решение
+1. 
+    select * from product_customers
+        union
+    select * from product_suppliers;
+2.  
+    select * from skill_product
+        union
+    select * from skill_product_v2;
+3.  
+    select * from skill_product
+        union all
+    select * from skill_product_v2;
+4.  
+    select product_name from skill_product
+        union
+    select product_name from skill_product_v2;
+5.  
+    select city from skill_customers
+        union
+    select city from skill_suppliers;
+
+2. Решение
+1.
+    select * from product_customers
+        intersect
+    select * from product_suppliers;
+2. 
+    select * from skill_product
+        intersect
+    select * from skill_product_v2;
+3. 
+    select * from product_customers
+        except
+    select * from product_suppliers;
+4. 
+    select * from product_suppliers
+        except
+    select * from product_customers;
+5.  
+    select product_name from skill_product
+        intersect
+    select product_name from skill_product_v2;
+
+3. Решение
+1. 
+    select 
+        * 
+    from city_suppliers
+        cross join city_property;
+2.
+    select
+        *
+    from city_suppliers, city_property;
+3. 
+    select 
+        * 
+    from gender t
+        cross join age_range t1
+    where (1=1) 
+            and t.gender = 'F'
+            and t1.age_range != '[-18]';
+4. 
+    select
+        t.week_day
+        ,t1.name
+        ,t1.lesson_begin + ' - ' + t1.lesson_end lesson_time
+    from week_days t 
+        cross join lessons t1
+    where (1=1)
+            and t.is_weekend = '0';
+5.  
+    select 
+        t.customer
+        ,t1.supplier
+    from skill_customers t
+        cross join skill_suppliers t1
+    where (1=1) 
+            and (t.product = 'CPU' and t1.product = 'CPU');
+
+4. Решение
+1.
+    select
+        customer
+        ,city
+        ,product
+        ,1 as cnt
+    from skill_customers
+    union 
+    select 
+        supplier
+        ,city
+        ,product
+        ,cnt
+    from skill_suppliers;
+2. 
+    select count(*) from skill_customers;
+    select count(*) from skill_suppliers;
+
+    select customer from skill_customers
+    union
+    select supplier from skill_suppliers;
+3. 
+    select
+        substring(t.supplier, 1, charindex(' ', t.supplier)) as nm_supplier
+        ,substring(t1.supplier, charindex(' ', t1.supplier) + 1, len(t1.supplier)) as surnm_supplier
+    from skill_suppliers t
+        cross join skill_suppliers t1;

@@ -1,0 +1,221 @@
+1. Решение
+1.      
+    select 
+        *
+    from skill_managers
+    where (1=1)
+            and birth_date = '1989-11-25';
+2. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and (birth_date = '1989-11-25' or birth_date = '1997-07-14');
+3.
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and last_transaction_dt in ('2020-03-10 15:07:11', '2020-05-11 17:28:26');
+4.
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and cast(last_transaction_dt as date) = '2020-09-01';
+5. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and cast(last_transaction_dt as time) = '16:54:30';
+
+2. Решение
+1.
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and birth_date >= '1989-11-25';
+2. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and birth_date BETWEEN '1989-11-25' and '1997-07-14';
+3. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and (
+                    cast(last_transaction_dt as date) in ('2020-03-10')
+                    and cast(last_transaction_dt as time) = '15:07:11'
+                );
+4. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and last_transaction_dt BETWEEN '2020-03-10 15:07:11' and '2020-05-11 17:28:26';
+5. 
+    select
+        *
+    from skill_managers
+    where (1=1)
+            and convert(date, last_transaction_dt) BETWEEN '2020-03-10' and '2020-05-11';
+
+3. Решение
+Microsoft SQL Server
+1. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    year >= year('2020-08-20')
+                    and 
+                    month >= month('2020-08-20')
+                    and
+                    day >= day('2020-08-20')
+                 );
+2. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and DATEFROMPARTS(year, month, day) in ('2020-08-20');
+3.
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    DATEFROMPARTS(year, month, day) > '2020-08-20'
+                    and
+                    DATEFROMPARTS(year, month, day) < '2020-08-26'
+                );
+MySQL
+1. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    year >= year('2020-08-20')
+                    and
+                    month >= month('2020-08-20')
+                    and
+                    day >= day('2020-08-20')
+                );
+2. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and cast(concat_ws('-', year, month, day) as date) = '2020-08-20';
+3. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    convert(concat_ws('-', year, month, day), date) > '2020-08-20'
+                    and
+                    convert(concat_ws('-', year, month, day), date) < '2020-08-26'
+                );
+Postgres
+1. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    year >= date_part('year', '2020-08-20'::date)
+                    and
+                    month >= date_part('month', '2020-08-20'::date)
+                    and
+                    day >= date_part('day', '2020-08-20'::date)
+                );
+2. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and make_date(year, month, day) = '2020-08-20';
+3. 
+    select
+        *
+    from skill_operation
+    where (1=1)
+            and (
+                    make_date(year, month, day) > '2020-08-20'
+                    and
+                    make_date(year, month, day) < '2020-08-26'
+                );
+
+4. Решение 
+Microsoft SQL Server
+1. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and cast(replace(replace(replace(dt_bad_string, ' year ', '-'), ' month ', '-'), ' day', '') as date) = '2020-08-20';
+2.
+    select
+        *
+    from skill_events
+    where (1=1)
+            and cast(concat_ws
+                                (
+                                     '-'
+                                    ,trim(left(dt_bad_string, charindex('ye', dt_bad_string) - 2))
+                                    ,trim(substring(dt_bad_string, 11, charindex('mo', dt_bad_string) - 11))
+                                    ,trim(substring(dt_bad_string, charindex('th', dt_bad_string) + 3, 2))
+                                ) 
+                    as date) = '2020-08-20';
+MySQL
+1. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and str_to_date(replace(replace(replace(dt_bad_string, ' year ', ','), ' month ', ','), ' day', ','), '%Y,%m,%d') = '2020-08-20';
+
+2. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and str_to_date(concat_ws
+                                        (
+                                            ','
+                                            ,trim(left(dt_bad_string, locate('ye', dt_bad_string) - 2)) 
+                                            ,trim(substring(dt_bad_string, 11, locate('mo', dt_bad_string) - 11))
+                                            ,trim(substring(dt_bad_string, locate('th', dt_bad_string) + 3, 2))
+                                        ), 
+                            '%Y,%m,%d') = '2020-08-20';
+Postgres
+1. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and cast(replace(replace(replace(dt_bad_string, ' year ', '-'), ' month ', '-'), ' day', '') as date) = '2020-08-20';
+
+2. 
+    select
+        *
+    from skill_events
+    where (1=1)
+            and to_date(concat_ws
+                                        (
+                                            '/'
+                                            ,trim(left(dt_bad_string, strpos(dt_bad_string, 'ye') - 2)) 
+                                            ,trim(substring(dt_bad_string, 11, strpos(dt_bad_string, 'mo') - 11))
+                                            ,trim(substring(dt_bad_string, strpos(dt_bad_string, 'th') + 3, 2))
+                                        ), 
+                            'YYYY-MM-DD') = '2020-08-20';
+
+
